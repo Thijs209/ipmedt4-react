@@ -2,25 +2,26 @@ import React from "react";
 import axios from "axios";
 
 class App extends React.Component{
-    state = { users: ""}
+    state = { data: "", calories: ""}
 
     makeApiCall = () =>{
         console.log("ja")
-        axios.get('http://127.0.0.1:8000/api/scoreboard').then(res => {
+        axios.get('http://127.0.0.1:8000/api/exercise').then(res => {
             console.log(res.data)
             this.setState({
-                users: "http://127.0.0.1:8000" + res.data
+                data: res.data.name,
+                calories: res.data.calories
             })
         })
     }
 
     render(){
-        if(this.state.users == ""){
+        if(this.state.data == ""){
             this.makeApiCall()
         }
         return(
             <article>
-                <p>{this.state.users.email}</p>
+                <p>{this.state.data} {this.state.calories}</p>
             </article>
         )
     }
