@@ -1,0 +1,54 @@
+html{
+    font-family: 'Montserrat', sans-serif;
+}
+.nav {
+    overflow: hidden;
+    background-color: rgba(253, 52, 140, 0.6);
+    width: 100%;
+  }
+  
+
+.nav__a {
+    float: left;
+    color: #fff;
+    text-align: center;
+    margin: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1rem;
+    max-width: 20%;
+}
+
+.nav__a__p{
+    font-size: 200%;
+    border-radius: 100px;
+    padding: 0.5rem 1rem;
+    transition: box-shadow;
+    background-color: #6e44ff;
+    transition: 0.2s ease-out;
+    box-shadow: -0.5rem 0.5rem 0 #fbd83a;
+}
+  
+.nav__a:hover > p{
+    transform: translate(-0.3rem, 0.3rem);
+    box-shadow: -0.2rem 0.2rem 0 #fbd83a;
+}
+  
+.nav__a.active {
+    background-color: #fbd83a;
+    box-shadow: -0.5rem 0.5rem 0 #6e44ff;
+}
+
+@media only screen and (min-width: 750px) {
+
+    .nav__a__p{
+        font-size: 300%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .nav__a__p{
+        font-size: 400%;
+    }
+}

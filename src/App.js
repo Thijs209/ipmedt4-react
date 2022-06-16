@@ -1,29 +1,26 @@
 import React from "react";
 import axios from "axios";
 
-class App extends React.Component{
-    state = { users: ""}
+import Aanmeld from "./Aanmeld";
+import Home from "./Home";
+import Navbar from "./Navbar";
 
-    makeApiCall = () =>{
-        console.log("ja")
-        axios.get('http://127.0.0.1:8000/api/scoreboard').then(res => {
-            console.log(res.data)
-            this.setState({
-                users: "http://127.0.0.1:8000" + res.data
-            })
-        })
-    }
+class App extends React.Component {
+    state = {video: ""}
+
+    ffChecken = bloeb => {
+        const BASE_URL = "localhost:8000/api/exercise/";
+    };
 
     render(){
-        if(this.state.users == ""){
-            this.makeApiCall()
-        }
-        return(
-            <article>
-                <p>{this.state.users.email}</p>
-            </article>
-        )
+        return (
+            <main>
+                <Navbar />
+                <Home />
+                {/* <Aanmeld onSubmit={this.ffChecken} /> */}
+            </main>
+        );
     }
 }
 
-export default App
+export default App;
