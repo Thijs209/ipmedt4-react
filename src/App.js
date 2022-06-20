@@ -4,6 +4,7 @@ import axios from "axios";
 import Aanmeld from "./Aanmeld";
 import Home from "./Home";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 class App extends React.Component {
     state = {video: ""}
@@ -14,11 +15,12 @@ class App extends React.Component {
 
     render(){
         return (
-            <main>
+            <html>
                 <Navbar />
                 <Home />
+                <Footer />
                 {/* <Aanmeld onSubmit={this.ffChecken} /> */}
-            </main>
+            </html>
         );
     }
 }
