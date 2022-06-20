@@ -1,0 +1,56 @@
+html{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.notificationsForm{
+    width: 60vw;
+    margin: 4rem auto;
+}
+
+.notificationsForm__section{
+    margin: 1rem auto;
+    margin-bottom: 2rem;
+}
+
+.notificationsForm__label{
+    display: inline-block;
+    font-size: 170%;
+    width: 100%;
+    text-align: center;
+}
+
+.fillEveryDay__buttonSection{
+    width: fit-content;
+    margin: auto;
+}
+
+.fillEveryDay__button{
+    color: #fff;
+    text-align: center;
+    margin: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+    font-size: 3rem;
+    width: fit-content;
+    border-radius: 100px;
+    padding: 0.5rem 2rem;
+    border: none;
+    background-color: #6e44ff;
+    transition: 0.2s ease-out;
+}
+
+.fillEveryDay__button:hover{
+    transform: translate(-0.3rem, 0.3rem);
+    box-shadow: -0.2rem 0.2rem 0 #fbd83a;
+}
+
+.notificationsForm__selectExercises{
+    display: block;
+    margin: auto;
+    margin-top: 1rem;
+    padding: 1rem 8rem;
+    font-size: 2.5rem;
+    color: white;
+    background-color: #6e44ff;
+    box-shadow: -0.5rem 0.5rem 0 #fbd83a;
+}
