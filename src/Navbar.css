@@ -5,9 +5,8 @@ html{
     overflow: hidden;
     background-color: rgba(253, 52, 140, 0.6);
     width: 100%;
-  }
+}
   
-
 .nav__a {
     float: left;
     color: #fff;
@@ -21,7 +20,7 @@ html{
 }
 
 .nav__a__p{
-    font-size: 200%;
+    font-size: 150%;
     border-radius: 100px;
     padding: 0.5rem 1rem;
     transition: box-shadow;
