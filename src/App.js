@@ -18,8 +18,8 @@ class App extends React.Component {
             <html>
                 <Navbar />
                 <Home />
+                <Aanmeld onSubmit={this.ffChecken} />
                 <Footer />
-                {/* <Aanmeld onSubmit={this.ffChecken} /> */}
             </html>
         );
     }

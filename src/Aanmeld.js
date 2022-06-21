@@ -1,4 +1,5 @@
 import React from "react";
+import "./Aanmeld.css";
 
 class Aanmeld extends React.Component{
     state = {aanmeldForm: ""};
@@ -16,52 +17,42 @@ class Aanmeld extends React.Component{
     render(){
         console.log(this.state.aanmeldForm);
         return (
-            <section>
-                <form onSubmit={this.onSubmit}>
+            <section class="section__form">
+                <form class="form" onSubmit={this.onSubmit}>
                     <input
-                    className="Aanmeld__voornaam"
+                    class="Aanmeld__voornaam"
                     type="text"
                     placeholder="Vul hier je voornaam in..."
                     onChange={this.onSearch}
                     />
                     <input
-                    className="Aanmeld__achternaam"
+                    class="Aanmeld__achternaam"
                     type="text"
                     placeholder="Vul hier je achternaam in..."
                     />
                     <input
-                    className="Aanmeld__email"
+                    class="Aanmeld__email"
                     type="text"
                     placeholder="Vul hier je email adres in..."
                     />
                     <input
-                    className="Aanmeld__wachtwoord"
+                    class="Aanmeld__wachtwoord"
                     type="password"
                     placeholder="Vul hier je wachtwoord in..."
                     />
 
                     <input
-                    className="Aanmeld__leeftijd"
+                    class="Aanmeld__leeftijd"
                     type="date"
                     />
 
-                    <input
-                    className="Aanmeld__geslacht"
-                    type="radio"
-                    value="Man"
-                    name="geslacht" />
-                    <input
-                    className="Aanmeld__geslacht"
-                    type="radio"
-                    value="Vrouw"
-                    name="geslacht" />
-                    <input
-                    className="Aanmeld__geslacht"
-                    type="radio"
-                    value="Overig"
-                    name="geslacht" />
+                    <select class="Aanmeld__geslacht" name="geslacht" placeholder="Selecteer je geslacht...">
+                        <option value="man">Man</option>
+                        <option value="vrouw">Vrouw</option>
+                        <option value="anders">Anders</option>
+                    </select>
 
-                    <input type="submit" value="Registreer"/>
+                    <input class="Aanmeld__submit" type="submit" value="Registreer"/>
 
                 </form>
             </section>
