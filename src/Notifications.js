@@ -4,7 +4,7 @@ import ChooseDays from "./ChooseDays";
 import axios from "axios"
 
 class Notifications extends React.Component{
-    state = {exercises: 1, everyDay: true, intensity:1, time:{}, submit:false}
+    state = {exercises: 1, everyDay: true, intensity:1, time:"", days:{'monday': true, 'tuesday':true, 'wednesday':true, 'thursday':true, 'friday':true, 'saturday':true, 'sunday':true}}
 
     chooseIntensity = (event) =>{
         this.setState({intensity: event.target.value})
@@ -28,10 +28,10 @@ class Notifications extends React.Component{
         let otherButton;
         if(clickedButton.id == "yes"){
             otherButton = document.getElementById("no")
-            this.setState({everyDay: true})
+            this.setState({everyDay: true, days:{'monday': true, 'tuesday':true, 'wednesday':true, 'thursday':true, 'friday':true, 'saturday':true, 'sunday':true}})
         } else {
             otherButton = document.getElementById("yes")   
-            this.setState({everyDay: false})
+            this.setState({everyDay: false, days:{'monday': false, 'tuesday':false, 'wednesday':false, 'thursday':false, 'friday':false, 'saturday':false, 'sunday':false}})
         }
 
         clickedButton.className = "notificationsForm__button fillEveryDay__selectedButton"
@@ -39,45 +39,74 @@ class Notifications extends React.Component{
         otherButton.className = "notificationsForm__button"
     }
 
+    
+    chooseDay = (event) =>{
+        let button = event.target
+        if(this.state.days[button.id] == true){
+            button.className = "notificationsForm__dayButton"
+            this.state.days[button.id] = false
+        } else{
+            button.className = "notificationsForm__dayButton notificationsForm__dayButtonSelected"
+            this.state.days[button.id] = true
+        }
+        
+        console.log(this.state.days);
+    }
+
     submit = (event) =>{
         event.preventDefault()
-        console.log(event.target);
-        let dict = {}
+        let string;
         
         for (let i = 0; i < this.state.exercises; i++) {
             let value = document.getElementById(i+1).value
-            let index = i+1
-            dict[index] = value
-            this.setState({time: dict})
+            string = value + "/"
+            this.setState({time: (this.state.time.concat(string))})
+            console.log(this.state.time)
         }
-        console.log(this.state)
-        this.setState({submit: true})
+        this.makeApiCall();
+    }
+
+    makeApiCall = () => {
+        const username = {name: localStorage.getItem('auth_name')}
+        let notificationsData = {}
+
+        axios.get('/sanctum/csrf-cookie').then(response => {
+            axios.post(`api/profiel`, username).then(res => {
+                if (res.data.status === 200) {
+                    notificationsData = {
+                        'userId': res.data.id,
+                        'exercise_amount': this.state.exercises,
+                        'intensity': this.state.intensity,
+                        'time' : this.state.time,
+                        'monday' : this.state.days['monday'],
+                        'tuesday' : this.state.days['tuesday'],
+                        'wednesday' : this.state.days['wednesday'],
+                        'thursday' : this.state.days['thursday'],
+                        'friday' : this.state.days['friday'],
+                        'saturday' : this.state.days['saturday'],
+                        'sunday' : this.state.days['sunday'],
+                    }
+                    axios.get('/sanctum/csrf-cookie').then(response => {
+                        console.log(notificationsData);
+                            axios.post(`api/setnotifications`, notificationsData).then(res => {
+                            if (res.data.status === 200) {
+                                window.location.replace("/");
+                            } else {
+                                console.log("oeps");
+                            }
+                        });
+                    })
+                    console.log(notificationsData);
+                    
+                } else {
+                    console.log("oeps");
+                }
+                
+            })
+        })
     }
 
     render(){
-        const username = localStorage.setItem('auth_name')
-        if(this.state.submit){
-            axios.get('/sanctum/csrf-cookie').then(response => {
-                axios.post(`api/setnofications`, username).then(res => {})})
-
-            // const notificationsData = {
-            //     'userID': 
-            // }
-
-            // axios.get('/sanctum/csrf-cookie').then(response => {
-            //     axios.post(`api/setnotifications`, notificationsData).then(res => {
-            //         if (res.data.status === 200) {
-            //             localStorage.setItem('auth_token', res.data.token);
-            //             localStorage.setItem('auth_name', res.data.username);
-            //             window.location.replace("/");
-            //         } else if (res.data.status === 401) {
-            //             setLoginInvalid(res.data.message);
-            //         } else {
-            //             setLogin({...loginInput, error_list: res.data.validation_errors});
-            //         }
-            //     });
-            // });
-        }
         return(
             <form className="notificationsForm" onSubmit={this.submit}>
                 <section className="notificationsForm__section">
@@ -87,7 +116,7 @@ class Notifications extends React.Component{
                         <input className="notificationsForm__button" id="no" value="Niet elke dag" type="button" onClick={this.chooseEveryday}/>
                     </section>
                 </section>
-                <ChooseDays everyDay={this.state.everyDay}/>
+                <ChooseDays chooseDay={this.chooseDay} everyDay={this.state.everyDay}/>
                 <section className="notificationsForm__section">
                     <label className="notificationsForm__label">Hoeveel oefeningen per dag Wil je doen?</label><br/>
                     <select onChange={this.chooseExercise} className="notificationsForm__selectInput">
@@ -101,7 +130,7 @@ class Notifications extends React.Component{
                 <section className="notificationsForm__section">
                     <label className="notificationsForm__label">Op welke tijden wil je deze oefeningen deon?</label>
                     <section className="notificationsForm__timeInputSection" id="timeInputSection">
-                        <input id="1" type="time" className="notificationsForm__timeInput"/>
+                        <input required id="1" type="time" className="notificationsForm__timeInput"/>
                     </section>  
                 </section>
                 <section className="notificationsForm__section">

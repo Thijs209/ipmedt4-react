@@ -1,13 +1,15 @@
 import React from "react";
 import axios from 'axios';
 
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+
 import Login from "./auth/Login";
 import Register from "./auth/Register";
 import Profile from "./auth/Profile";
 
 import Aanmeld from "./Aanmeld";
 import Home from "./Home";
-import Navbar from "./Navbar";
+import Navbar from "./components/Navbar";
 import Notifications from "./Notifications";
 
 axios.defaults.baseURL = "http://localhost:8000/";
@@ -39,6 +41,19 @@ class App extends React.Component {
                     <Navbar />
                     <Home navigation = {this.toMessages}/>
                     {/* <Aanmeld onSubmit={this.ffChecken} /> */}
+                    <Router>
+                        <Switch>
+                            <Route exact path="/profiel" component={Profile}/>
+
+                            <Route path="/register">
+                                {localStorage.getItem('auth_token') ? <Redirect to='/' /> : <Register />}
+                            </Route>
+                            <Route path="/login">
+                                {localStorage.getItem('auth_token') ? <Redirect to='/' /> : <Login />}
+                            </Route>
+                            
+                        </Switch>
+                    </Router>
                 </main>
             );
         }else if(this.state.page == "notifications"){
@@ -46,19 +61,7 @@ class App extends React.Component {
                 <article>
                     <Navbar />
                     <Notifications />
-                    <Router>
-                    <Switch>
-                        <Route exact path="/profiel" component={Profile}/>
-
-                        <Route path="/register">
-                            {localStorage.getItem('auth_token') ? <Redirect to='/' /> : <Register />}
-                        </Route>
-                        <Route path="/login">
-                            {localStorage.getItem('auth_token') ? <Redirect to='/' /> : <Login />}
-                        </Route>
-                        
-                    </Switch>
-                </Router>
+                    
                 </article>
             );
         }

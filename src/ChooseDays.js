@@ -1,16 +1,8 @@
 import React from "react";
 
 class ChooseDays extends React.Component {
-    state = { days: {} } 
     chooseDay = (event) =>{
-        let button = event.target
-        if(this.state.days[button.id] == true){
-            button.className = "notificationsForm__dayButton"
-            this.state.days[button.id] = false
-        } else{
-            button.className = "notificationsForm__dayButton notificationsForm__dayButtonSelected"
-            this.state.days[button.id] = true
-        }
+        this.props.chooseDay(event)
     }
 
     render() { 
