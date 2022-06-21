@@ -46,6 +46,19 @@ class App extends React.Component {
                 <article>
                     <Navbar />
                     <Notifications />
+                    <Router>
+                    <Switch>
+                        <Route exact path="/profiel" component={Profile}/>
+
+                        <Route path="/register">
+                            {localStorage.getItem('auth_token') ? <Redirect to='/' /> : <Register />}
+                        </Route>
+                        <Route path="/login">
+                            {localStorage.getItem('auth_token') ? <Redirect to='/' /> : <Login />}
+                        </Route>
+                        
+                    </Switch>
+                </Router>
                 </article>
             );
         }
