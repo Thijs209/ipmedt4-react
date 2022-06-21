@@ -39,10 +39,6 @@ class Profile extends React.Component{
                 <p>Profiel van {this.state.authName}</p>
                 <p>{this.state.authName} zijn score: {this.state.authScore}</p>
                 <p>{this.state.authName} zijn leeftijd: {this.state.authAge}</p>
-
-                <form onSubmit>
-                    <button type="submit">Registreer</button>
-                </form>
             </main>
         )
     }
