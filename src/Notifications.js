@@ -1,6 +1,7 @@
 import React, { createElement } from "react";
 import "./Notifications.css"
 import ChooseDays from "./ChooseDays";
+import axios from "axios"
 
 class Notifications extends React.Component{
     state = {exercises: 1, everyDay: true, intensity:1, time:{}, submit:false}
@@ -54,8 +55,28 @@ class Notifications extends React.Component{
     }
 
     render(){
+        const username = localStorage.setItem('auth_name')
         if(this.state.submit){
+            axios.get('/sanctum/csrf-cookie').then(response => {
+                axios.post(`api/setnofications`, username).then(res => {})})
 
+            // const notificationsData = {
+            //     'userID': 
+            // }
+
+            // axios.get('/sanctum/csrf-cookie').then(response => {
+            //     axios.post(`api/setnotifications`, notificationsData).then(res => {
+            //         if (res.data.status === 200) {
+            //             localStorage.setItem('auth_token', res.data.token);
+            //             localStorage.setItem('auth_name', res.data.username);
+            //             window.location.replace("/");
+            //         } else if (res.data.status === 401) {
+            //             setLoginInvalid(res.data.message);
+            //         } else {
+            //             setLogin({...loginInput, error_list: res.data.validation_errors});
+            //         }
+            //     });
+            // });
         }
         return(
             <form className="notificationsForm" onSubmit={this.submit}>
