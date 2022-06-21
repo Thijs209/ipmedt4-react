@@ -33,6 +33,7 @@ class App extends React.Component{
             <Navbar />
                 <Router>
                     <Switch>
+                        <Route exact path="/home" component={Home}/>
                         <Route exact path="/profiel" component={Profile}/>
 
                         <Route exact path="/scoreboard" component={Scoreboard}/>
