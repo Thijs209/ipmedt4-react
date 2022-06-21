@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
@@ -6,6 +6,8 @@ import Login from "./auth/Login";
 import Register from "./auth/Register";
 import Profile from "./auth/Profile";
 import Scoreboard from "./Scoreboard";
+
+import Firebase, {fetchToken} from "./firebase/Firebase";
 
 import Navbar from "./components/Navbar";
 
@@ -22,15 +24,21 @@ axios.interceptors.request.use(function (config) {
 
 class App extends React.Component{
 
+    allowAccess = (e) => {
+        const [isTokenFound, setTokenFound] = useState(false);
+        fetchToken(setTokenFound);
+    }
+
     render () {
+        this.allowAccess();
         return (
             
             <main className="App">
+
             <Navbar />
                 <Router>
                     <Switch>
-                        <Route exact path="/profiel" component={Profile}/>
-
+                        <Route exact path="/scoreboard" component={Scoreboard}/>
                         <Route exact path="/scoreboard" component={Scoreboard}/>
 
                         <Route path="/register">
@@ -42,6 +50,7 @@ class App extends React.Component{
                         
                     </Switch>
                 </Router>
+                {/* <Button onClick={() => setShow(true)}>Show Toast</Button> */}
             </main>
         )
     }
