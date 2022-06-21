@@ -6,6 +6,8 @@ class Profile extends React.Component{
     state = {
         onLoad: true,
         authName: '',
+        authAge: '',
+        authScore: '',
     };
 
     profileSubmit = () => {
@@ -18,10 +20,11 @@ class Profile extends React.Component{
             axios.post(`api/profiel`, authData).then(res => {
                 if (res.data.status === 200) {
                     this.setState({authName: res.data.name});
+                    this.setState({authAge: res.data.age});
+                    this.setState({authScore: res.data.score});
                 } else {
 
                 }
-                console.log(this.state.authName);
             });
         });
     }
@@ -34,6 +37,8 @@ class Profile extends React.Component{
         return (
             <main>
                 <p>Profiel van {this.state.authName}</p>
+                <p>{this.state.authName} zijn score: {this.state.authScore}</p>
+                <p>{this.state.authName} zijn leeftijd: {this.state.authAge}</p>
             </main>
         )
     }

@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import Login from "./auth/Login";
 import Register from "./auth/Register";
 import Profile from "./auth/Profile";
+import Scoreboard from "./Scoreboard";
 
 import Aanmeld from "./Aanmeld";
 import Home from "./Home";
@@ -23,49 +24,30 @@ axios.interceptors.request.use(function (config) {
     return config;
 });
 
-class App extends React.Component {
-    state = {page: "home"}
+class App extends React.Component{
 
-    ffChecken = bloeb => {
-        const BASE_URL = "localhost:8000/api/exercise/";
-    };
-    
-    toMessages = () => {
-        this.setState({page:'notifications'})
-    }
+    render () {
+        return (
+            
+            <main className="App">
+            <Navbar />
+                <Router>
+                    <Switch>
+                        <Route exact path="/profiel" component={Profile}/>
 
-    render(){
-        if (this.state.page == "home"){
-            return (
-                <main>
-                    <Navbar />
-                    <Home navigation = {this.toMessages}/>
-                    {/* <Aanmeld onSubmit={this.ffChecken} /> */}
-                    <Router>
-                        <Switch>
-                            <Route exact path="/profiel" component={Profile}/>
+                        <Route exact path="/scoreboard" component={Scoreboard}/>
 
-                            <Route path="/register">
-                                {localStorage.getItem('auth_token') ? <Redirect to='/' /> : <Register />}
-                            </Route>
-                            <Route path="/login">
-                                {localStorage.getItem('auth_token') ? <Redirect to='/' /> : <Login />}
-                            </Route>
-                            
-                        </Switch>
-                    </Router>
-                </main>
-            );
-        }else if(this.state.page == "notifications"){
-            return (
-                <article>
-                    <Navbar />
-                    <Notifications />
-                    
-                </article>
-            );
-        }
-        
+                        <Route path="/register">
+                            {localStorage.getItem('auth_token') ? <Redirect to='/' /> : <Register />}
+                        </Route>
+                        <Route path="/login">
+                            {localStorage.getItem('auth_token') ? <Redirect to='/' /> : <Login />}
+                        </Route>
+                        
+                    </Switch>
+                </Router>
+            </main>
+        )
     }
 }
 

@@ -6,7 +6,7 @@ function Register () {
     const [registerInput, setRegister] = useState({
         name: '',
         email: '',
-        age: '',
+        age: 0,
         password: '',
         password_confirmation: '',
         error_list: [],
@@ -26,6 +26,8 @@ function Register () {
             password: registerInput.password,
             password_confirmation: registerInput.password_confirmation,
         };
+
+        console.log(registerData);
 
         axios.get('sanctum/csrf-cookie').then(response => {
             axios.post(`api/register`, registerData).then(res => {
