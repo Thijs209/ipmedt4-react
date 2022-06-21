@@ -55,12 +55,12 @@ class Notifications extends React.Component{
 
     submit = (event) =>{
         event.preventDefault()
-        let string;
+        let string = "";
         
         for (let i = 0; i < this.state.exercises; i++) {
             let value = document.getElementById(i+1).value
-            string = value + "/"
-            this.setState({time: (this.state.time.concat(string))})
+            string = string + "/" + value;
+            this.setState({time: string})
             console.log(this.state.time)
         }
         this.makeApiCall();
