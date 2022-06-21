@@ -1,5 +1,6 @@
 import React from "react";
 import axios from 'axios';
+
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 import Login from "./auth/Login";
@@ -7,7 +8,10 @@ import Register from "./auth/Register";
 import Profile from "./auth/Profile";
 import Scoreboard from "./Scoreboard";
 
+import Aanmeld from "./Aanmeld";
+import Home from "./Home";
 import Navbar from "./components/Navbar";
+import Notifications from "./Notifications";
 
 axios.defaults.baseURL = "http://localhost:8000/";
 axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -47,4 +51,4 @@ class App extends React.Component{
     }
 }
 
-export default App
+export default App;
