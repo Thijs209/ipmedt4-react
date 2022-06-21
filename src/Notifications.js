@@ -49,12 +49,13 @@ class Notifications extends React.Component{
             dict[index] = value
             this.setState({time: dict})
         }
+        console.log(this.state)
         this.setState({submit: true})
     }
 
     render(){
         if(this.state.submit){
-            
+
         }
         return(
             <form className="notificationsForm" onSubmit={this.submit}>
