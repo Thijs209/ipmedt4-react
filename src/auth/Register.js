@@ -6,6 +6,7 @@ function Register () {
     const [registerInput, setRegister] = useState({
         name: '',
         email: '',
+        age: '',
         password: '',
         password_confirmation: '',
         error_list: [],
@@ -20,7 +21,8 @@ function Register () {
 
         const registerData = {
             name: registerInput.name, 
-            email: registerInput.email, 
+            email: registerInput.email,
+            age: registerInput.age, 
             password: registerInput.password,
             password_confirmation: registerInput.password_confirmation,
         };
@@ -52,6 +54,12 @@ function Register () {
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" onChange={handleInput} />
                 <span>{registerInput.error_list.email}</span>
+            </section>
+
+            <section>
+                <label for="age">Leeftijd</label>
+                <input type="number" min="12" max="120" name="age" id="age" onChange={handleInput} />
+                <span>{registerInput.error_list.age}</span>
             </section>
            
             <section>

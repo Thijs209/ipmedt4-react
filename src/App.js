@@ -1,6 +1,6 @@
 import React from "react";
 import axios from 'axios';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 import Login from "./auth/Login";
 import Register from "./auth/Register";
@@ -28,9 +28,15 @@ class App extends React.Component{
             <Navbar />
                 <Router>
                     <Switch>
-                        <Route exact path="/register" component={Register}/>
-                        <Route exact path="/login" component={Login}/>
                         <Route exact path="/profiel" component={Profile}/>
+
+                        <Route path="/register">
+                            {localStorage.getItem('auth_token') ? <Redirect to='/' /> : <Register />}
+                        </Route>
+                        <Route path="/login">
+                            {localStorage.getItem('auth_token') ? <Redirect to='/' /> : <Login />}
+                        </Route>
+                        
                     </Switch>
                 </Router>
             </main>
