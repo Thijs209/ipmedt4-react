@@ -6,6 +6,8 @@ import Login from "./auth/Login";
 import Register from "./auth/Register";
 import Profile from "./auth/Profile";
 
+import Navbar from "./components/Navbar";
+
 axios.defaults.baseURL = "http://localhost:8000/";
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 axios.defaults.headers.post['Accept'] = 'application/json';
