@@ -1,9 +1,14 @@
+*{
+    --purple: #6e44ff;
+    --yellow: #fbd83a;
+}
+
 html{
     font-family: 'Montserrat', sans-serif;
 }
 
 .notificationsForm{
-    width: 60vw;
+    width: 75vw;
     margin: 4rem auto;
 }
 
@@ -19,12 +24,14 @@ html{
     text-align: center;
 }
 
-.fillEveryDay__buttonSection{
-    width: fit-content;
+.notificationsForm__buttonSection{
     margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.fillEveryDay__button{
+.notificationsForm__button{
     color: #fff;
     text-align: center;
     margin: 1rem;
@@ -35,22 +42,89 @@ html{
     border-radius: 100px;
     padding: 0.5rem 2rem;
     border: none;
-    background-color: #6e44ff;
+    background-color: var(--purple);
     transition: 0.2s ease-out;
+    box-shadow: -0.5rem 0.5rem 0 var(--yellow);
 }
 
 .fillEveryDay__button:hover{
     transform: translate(-0.3rem, 0.3rem);
-    box-shadow: -0.2rem 0.2rem 0 #fbd83a;
+    box-shadow: -0.2rem 0.2rem 0 var(--yellow);
 }
 
-.notificationsForm__selectExercises{
+.fillEveryDay__selectedButton{
+    background-color: var(--yellow);
+    box-shadow: -0.5rem 0.5rem 0 var(--purple);
+    color: var(--purple);
+}
+
+.fillEveryDay__selectedButton:hover{
+    box-shadow: -0.2rem 0.2rem 0 var(--purple);
+}
+
+.notificationsForm__selectInput{
     display: block;
     margin: auto;
     margin-top: 1rem;
-    padding: 1rem 8rem;
+    padding: 1rem 1rem;
+    width: 30%;
+    min-width: fit-content;
     font-size: 2.5rem;
     color: white;
-    background-color: #6e44ff;
-    box-shadow: -0.5rem 0.5rem 0 #fbd83a;
+    background-color: var(--purple);
+    box-shadow: -0.5rem 0.5rem 0 var(--yellow);
+    text-align: center;
+}
+
+.notificationsForm__timeInput{
+    margin: 1rem auto;
+    min-width: fit-content;
+    display: block;
+    font-size: 250%;
+    color: white;
+    padding: 1rem 1rem;
+    width: 30%;
+    text-align: center;
+    border: none;
+    box-shadow: -0.5rem 0.5rem 0 var(--yellow);
+    background-color: var(--purple);
+}
+
+.notificationsForm__dayButtonSection{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.notificationsForm__dayButton{
+    background-color: var(--purple);
+    border: none;
+    font-size: 200%;
+    margin: 1rem 0.4rem;
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: -0.5rem 0.5rem 0 var(--yellow);
+    transition: 0.2s ease-out;
+}
+
+.notificationsForm__dayButton:hover{
+    transform: translate(-0.3rem, 0.3rem);
+    box-shadow: -0.2rem 0.2rem 0 var(--yellow);
+    cursor: pointer;
+}
+
+.notificationsForm__dayButtonSelected{
+    box-shadow: -0.5rem 0.5rem 0 var(--purple);
+    background-color: var(--yellow);
+    color: var(--purple);
+}
+
+.notificationsForm__dayButtonSelected:hover{
+    box-shadow: -0.2rem 0.2rem 0 var(--purple);
+}
+
+.notificationsForm__submitButton{
+    margin: 5rem auto;
+    padding: 1rem 8rem;
+    display: block;
 }

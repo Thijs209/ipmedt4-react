@@ -1,36 +1,74 @@
-import React from "react";
+import React, { createElement } from "react";
 import "./Notifications.css"
+import ChooseDays from "./ChooseDays";
 
 class Notifications extends React.Component{
-    state = {exercises: 5}
-    // chooseDays = (choice) =>{
-    //     console.log("test")
-    //     const yesButton = document.getElementById('yes');
-    //     const noButton = document.getElementById('no');
+    state = {exercises: 1, everyDay: true, intensity:1, time:{}, submit:false}
 
-
-
-    //     // yesButton.style.backgroundColor = "#fbd83a"
-    //     // yesButton.style.boxShadow = "-0.5rem 0.5rem 0 #fbd83a";
-    // }
+    chooseIntensity = (event) =>{
+        this.setState({intensity: event.target.value})
+    }
 
     chooseExercise = (event) =>{
+        const section = document.getElementById('timeInputSection')
+        const inputVeld = document.getElementsByClassName('notificationsForm__timeInput')[0]
+        section.innerHTML = ""
+
+        for (let i = 0; i < event.target.value; i++) {
+            let newInputField = inputVeld.cloneNode(true)
+            newInputField.id = i+1
+            section.appendChild(newInputField)
+        }
         this.setState({exercises:event.target.value})
     }
 
+    chooseEveryday = (event) =>{
+        let clickedButton = event.target
+        let otherButton;
+        if(clickedButton.id == "yes"){
+            otherButton = document.getElementById("no")
+            this.setState({everyDay: true})
+        } else {
+            otherButton = document.getElementById("yes")   
+            this.setState({everyDay: false})
+        }
+
+        clickedButton.className = "notificationsForm__button fillEveryDay__selectedButton"
+
+        otherButton.className = "notificationsForm__button"
+    }
+
+    submit = (event) =>{
+        event.preventDefault()
+        console.log(event.target);
+        let dict = {}
+        
+        for (let i = 0; i < this.state.exercises; i++) {
+            let value = document.getElementById(i+1).value
+            let index = i+1
+            dict[index] = value
+            this.setState({time: dict})
+        }
+        this.setState({submit: true})
+    }
+
     render(){
+        if(this.state.submit){
+            
+        }
         return(
-            <form className="notificationsForm">
+            <form className="notificationsForm" onSubmit={this.submit}>
                 <section className="notificationsForm__section">
                     <label className="notificationsForm__label">Wil je elke dag meldingen ontvangen of Alleen sommige dagen?</label><br/>
-                    <section className="fillEveryDay__buttonSection">
-                        <button className="fillEveryDay__button" id="yes" type="button">Ja</button>
-                        <input className="fillEveryDay__button" id="no" value="Nee" type="button"/>
+                    <section className="notificationsForm__buttonSection">
+                        <input className="notificationsForm__button" id="yes" value="Elke dag" type="button" onClick={this.chooseEveryday}/>
+                        <input className="notificationsForm__button" id="no" value="Niet elke dag" type="button" onClick={this.chooseEveryday}/>
                     </section>
                 </section>
+                <ChooseDays everyDay={this.state.everyDay}/>
                 <section className="notificationsForm__section">
                     <label className="notificationsForm__label">Hoeveel oefeningen per dag Wil je doen?</label><br/>
-                    <select onChange={this.chooseExercise} className="notificationsForm__selectExercises">
+                    <select onChange={this.chooseExercise} className="notificationsForm__selectInput">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -40,6 +78,20 @@ class Notifications extends React.Component{
                 </section>
                 <section className="notificationsForm__section">
                     <label className="notificationsForm__label">Op welke tijden wil je deze oefeningen deon?</label>
+                    <section className="notificationsForm__timeInputSection" id="timeInputSection">
+                        <input id="1" type="time" className="notificationsForm__timeInput"/>
+                    </section>  
+                </section>
+                <section className="notificationsForm__section">
+                    <label className="notificationsForm__label">Welke intensiteit moeten de oefeningen zijn?</label>
+                    <select onChange={this.chooseIntensity} className="notificationsForm__selectInput">
+                        <option value='1'>Laag</option>
+                        <option value='2'>Medium</option>
+                        <option value='3'>Hoog</option>
+                    </select>
+                </section>
+                <section className="notificationsForm__section">
+                    <input className="notificationsForm__button notificationsForm__submitButton" type="submit"></input>
                 </section>
             </form>
         );
