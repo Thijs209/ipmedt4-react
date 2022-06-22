@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+import "./Register.css";
+
 function Register () {
 
     const [registerInput, setRegister] = useState({
@@ -43,40 +45,43 @@ function Register () {
     }
 
     return (
-        <form onSubmit={registerSubmit}>
-            <h1>Register Page</h1>
+        <form class="register__form" onSubmit={registerSubmit}>
+            <section class="register__section register__titel">
+                <h1>Maak een account!</h1>
+                <p>Zo kan je je scores goed bijhouden en later terug bekijken via het scoreboard.</p>
+            </section>
 
-            <section>
+            <section class="register__section register__naam">
                 <label for="name">Naam</label>
                 <input type="text" name="name" id="name" onChange={handleInput} />
                 <span>{registerInput.error_list.name}</span>
             </section>
 
-            <section>
+            <section class="register__section register__email">
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" onChange={handleInput} />
                 <span>{registerInput.error_list.email}</span>
             </section>
 
-            <section>
+            <section class="register__section register__leeftijd">
                 <label for="age">Leeftijd</label>
                 <input type="number" min="12" max="120" name="age" id="age" onChange={handleInput} />
                 <span>{registerInput.error_list.age}</span>
             </section>
            
-            <section>
+            <section class="register__section register__wachtwoord">
                 <label for="password">Wachtwoord</label>
                 <input type="password" name="password" id="password" onChange={handleInput} />
                 <span>{registerInput.error_list.password}</span>
             </section>
 
-            <section>
+            <section class="register__section register__confirm">
                 <label for="password_confirm">Herhaal je wachtwoord</label>
                 <input type="password" name="password_confirmation" id="password_confirmation" onChange={handleInput} />
                 <span>{registerInput.error_list.password_confirmation}</span>
             </section>
 
-            <button type="submit">Registreer</button>
+            <button class="register__button" type="submit">Registreer</button>
         </form>
     );
 }
