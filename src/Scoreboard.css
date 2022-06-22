@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.scoreboard__header{
+    text-align: center;
+    padding-top:40px;
+    padding-bottom:40px;
+}
+.scoreboard__heading{
+    font-size:400%;
+    color:black;
+}
+.scoreboard__section{
+    display:flex;
+    width:50vw;
+    margin-left:25%;
+    margin-right:25%;
+}
+.scoreboard__SectionName{
+    background-color:#6E44FF;
+    padding-top:30px;
+    padding-bottom:30px;
+    width:100%;
+    border-top:1px solid black;
+    border-left:1px solid black;
+}
+.scoreboard__SectionScore{
+    background-color:#FBD83A;
+    padding-top:30px;
+    padding-bottom:30px;
+    width:100%;
+    border-top:1px solid black;
+    border-right:1px solid black;
+}
+.scoreboard__sectionText{
+    text-align:center;
+    color:white;
+    font-weight:bold;
+    font-size:200%;
+}
