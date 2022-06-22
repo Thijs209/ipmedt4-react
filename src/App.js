@@ -3,7 +3,7 @@ import axios from "axios";
 
 import Home from "./Home";
 import Exercise from "./Exercise";
-import Navbar from "./components/Navbar";
+import Navbar from "./Navbar";
 import Notifications from "./Notifications";
 import Footer from "./Footer";
 
