@@ -7,7 +7,7 @@ class Navbar extends React.Component{
     render(){
         /* If ingelogd, dan eerste return, anders tweede*/
         console.log("navbar ingeladen");
-        if(false){
+        if(true){
             return (
                 <nav class="nav">
                     <a class="nav__a" href="/home"><p class="nav__a__p">Home</p></a>
