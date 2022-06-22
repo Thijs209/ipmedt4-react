@@ -24,6 +24,7 @@ html{
     border-radius: 100px;
     padding: 0.5rem 1rem;
     transition: box-shadow;
+    width: 100%;
     background-color: #6e44ff;
     transition: 0.2s ease-out;
     box-shadow: -0.5rem 0.5rem 0 #fbd83a;

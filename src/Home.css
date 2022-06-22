@@ -10,12 +10,14 @@ html{
 }
 
 
+
+/* ---- Big button stuff ----- */
 .section{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 90vh;
+    height: 50rem;
 }
 
 .section__button{
@@ -66,16 +68,19 @@ html{
     display: flex;
     justify-content: center;
     padding: 2rem;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .section__info__img{
     animation-name: swing;
     animation-iteration-count: infinite;
     animation-duration: 2.5s;
-    width: 20rem;
-    height: 30rem;
-    max-width: 1280px;
-    max-height: 1920px;
+    max-width: 80%;
+    width: auto;
+    height: 100%;
     transition: transform .2s ease-in-out;
     border: #6e44ff 0.5rem dashed;
     border-radius: 5px;
@@ -94,11 +99,100 @@ html{
 }
 
 
+/* ---------- Aanmeldknop -------- */
+.section__aanmeld{
+    box-sizing: border-box;
+    height: 50%;
+    width: 100%;
+    margin: auto;
+    margin-top: 2rem;
+    padding: 3rem;
+}
+
+.aanmeld__a{
+    color: #fff;
+    text-align: center;
+    margin: 1rem auto;
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 80%;
+}
+
+.aanmeld__a__p{
+    font-size: 150%;
+    border-radius: 100px;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    background-color: #6e44ff;
+    transition: 0.2s ease-out;
+    box-shadow: -0.5rem 0.5rem 0 #fbd83a;
+}
+
+.aanmeld__a__p:hover{
+    transform: translate(-0.3rem, 0.3rem);
+    box-shadow: -0.2rem 0.2rem 0 #fbd83a;
+}
+  
+.aanmeld__a.active {
+    background-color: #fbd83a;
+    box-shadow: -0.5rem 0.5rem 0 #6e44ff;
+}
+
+.form > input{
+    display: block;
+    margin: auto;
+    margin-top: 1rem;
+    padding: 1rem 0;
+    width: 80%;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #6e44ff;
+    box-shadow: -0.5rem 0.5rem 0 #fbd83a;
+}
+
+.form > input::placeholder {
+    color: white;
+}
+
+.form > select{
+    display: block;
+    margin: auto;
+    margin: 1rem auto;
+    width: 80%;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #6e44ff;
+    box-shadow: -0.5rem 0.5rem 0 #fbd83a;
+}
+/* ------ Grid main ------ */
+.main{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.section{
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.section__info{
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.section__aanmeld{
+    grid-area: 3 / 1 / 4 / 2;
+}
+
 /* ------ Grid stuff ------- */
 .section__grid{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.1fr 0.1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 0.1fr 1fr 1fr 1fr 1frw;
     grid-column-gap: 1rem;
     grid-row-gap: 1rem;
 }
@@ -125,6 +219,10 @@ html{
 
 .text2{
     grid-area: 6 / 1 / 7 / 2;
+}
+
+.section__aanmeld{
+    grid-area: 7 / 1 / 8 / 2;
 }
 
 
@@ -156,6 +254,10 @@ html{
 }
 
 @media screen and (min-width: 750px) {
+    .section{
+        height: 65rem;
+    }
+
     .section__button {
       height: 55rem;
       width: 55rem;
@@ -200,7 +302,6 @@ html{
 @keyframes swing {
     0%{
         transform: rotate(8deg)
-
     }
     50%{
         transform: rotate(-8deg)
