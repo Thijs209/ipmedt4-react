@@ -11,7 +11,7 @@ import Exercise from "./Exercise";
 
 // import Aanmeld from "./Aanmeld";
 import Home from "./Home";
-import Navbar from "./components/Navbar";
+import Navbar from "./Navbar";
 import Notifications from "./Notifications";
 
 axios.defaults.baseURL = "http://localhost:8000/";
@@ -48,7 +48,9 @@ class App extends React.Component{
                             <Route exact path="/profiel" component={Profile}/>
                             <Route exact path="/scoreboard" component={Scoreboard}/>
                             <Route exact path="/oefening" component={Exercise}/>
+                            <Route exact path="/" component={Home}/>
                             <Route exact path="/home" component={Home}/>
+                            <Route exact path="/notificatie" component={Notifications}/>
 
                             <Route path="/register">
                                 {localStorage.getItem('auth_token') ? <Redirect to='/' /> : <Register />}

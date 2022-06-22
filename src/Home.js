@@ -5,6 +5,10 @@ import kantoor from './assets/kantoormensen.jpg';
 
 class Home extends React.Component{
     
+    buttonPress = () =>{
+        window.location.replace("/oefening")
+    }
+
     render(){
         console.log("home ingeladen");
         return (

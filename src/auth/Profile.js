@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "./Profile.css";
 
 class Profile extends React.Component{
 
@@ -37,9 +38,12 @@ class Profile extends React.Component{
         this.state.onLoad = false;
         return (
             <main>
+                <article>
                 <p>Profiel van {this.state.authName}</p>
                 <p>{this.state.authName} zijn score: {this.state.authScore}</p>
                 <p>{this.state.authName} zijn leeftijd: {this.state.authAge}</p>
+                </article>
+
             </main>
         )
     }
