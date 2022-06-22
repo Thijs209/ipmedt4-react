@@ -20,7 +20,7 @@ html{
 }
 
 .nav__a__p{
-    font-size: 150%;
+    font-size: 130%;
     border-radius: 100px;
     padding: 0.5rem 1rem;
     transition: box-shadow;
@@ -43,12 +43,12 @@ html{
 @media only screen and (min-width: 750px) {
 
     .nav__a__p{
-        font-size: 300%;
+        font-size: 200%;
     }
 }
 
 @media only screen and (min-width: 1200px) {
     .nav__a__p{
-        font-size: 400%;
+        font-size: 300%;
     }
 }
