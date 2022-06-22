@@ -37,11 +37,9 @@ class App extends React.Component{
     }
 
     render(){
-        if (this.state.page == "home"){
             return (
                 <main>
                     <Navbar />
-                    <Home navigation = {this.toMessages}/>
                     {/* <Aanmeld onSubmit={this.ffChecken} /> */}
                     <Router>
                         <Switch>
@@ -59,16 +57,6 @@ class App extends React.Component{
                     </Router>
                 </main>
             );
-        }else if(this.state.page == "notifications"){
-            return (
-                <article>
-                    <Navbar />
-                    <Notifications />
-                    
-                </article>
-            );
-        }
-        
     }
 }
 
