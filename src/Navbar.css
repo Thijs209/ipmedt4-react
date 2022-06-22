@@ -5,9 +5,8 @@ html{
     overflow: hidden;
     background-color: rgba(253, 52, 140, 0.6);
     width: 100%;
-  }
+}
   
-
 .nav__a {
     float: left;
     color: #fff;
@@ -21,10 +20,11 @@ html{
 }
 
 .nav__a__p{
-    font-size: 200%;
+    font-size: 130%;
     border-radius: 100px;
     padding: 0.5rem 1rem;
     transition: box-shadow;
+    width: 100%;
     background-color: #6e44ff;
     transition: 0.2s ease-out;
     box-shadow: -0.5rem 0.5rem 0 #fbd83a;
@@ -43,12 +43,12 @@ html{
 @media only screen and (min-width: 750px) {
 
     .nav__a__p{
-        font-size: 300%;
+        font-size: 200%;
     }
 }
 
 @media only screen and (min-width: 1200px) {
     .nav__a__p{
-        font-size: 400%;
+        font-size: 300%;
     }
 }
