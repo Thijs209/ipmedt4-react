@@ -97,6 +97,7 @@ class Notifications extends React.Component{
                         });
                     })
                     console.log(notificationsData);
+            
                     
                 } else {
                     console.log("oeps");

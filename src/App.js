@@ -46,6 +46,7 @@ class App extends React.Component{
                     <Router>
                         <Switch>
                             <Route exact path="/profiel" component={Profile}/>
+                            <Route exact path="/scoreboard" component={Scoreboard}/>
 
                             <Route path="/register">
                                 {localStorage.getItem('auth_token') ? <Redirect to='/' /> : <Register />}
