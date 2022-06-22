@@ -7,6 +7,7 @@ import Login from "./auth/Login";
 import Register from "./auth/Register";
 import Profile from "./auth/Profile";
 import Scoreboard from "./Scoreboard";
+import Exercise from "./Exercise";
 
 import Aanmeld from "./Aanmeld";
 import Home from "./Home";
@@ -47,6 +48,7 @@ class App extends React.Component{
                         <Switch>
                             <Route exact path="/profiel" component={Profile}/>
                             <Route exact path="/scoreboard" component={Scoreboard}/>
+                            <Route exact path="/oefening" component={Exercise}/>
 
                             <Route path="/register">
                                 {localStorage.getItem('auth_token') ? <Redirect to='/' /> : <Register />}
