@@ -20,13 +20,13 @@ class Home extends React.Component{
                         </button>
                     </section>
                 </main>
-            )
+            );
         } else {
             return (
                 <main>
                     <h1>Test test</h1>
                 </main>
-            )
+            );
         }
     }
 }

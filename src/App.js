@@ -10,6 +10,7 @@ import Scoreboard from "./Scoreboard";
 
 import Aanmeld from "./Aanmeld";
 import Home from "./Home";
+import Exercise from "./Exercise";
 import Navbar from "./components/Navbar";
 import Notifications from "./Notifications";
 
@@ -45,6 +46,10 @@ class App extends React.Component{
                         <Switch>
                             <Route exact path="/profiel" component={Profile}/>
                             <Route exact path="/scoreboard" component={Scoreboard}/>
+                            <Route exact path="/notificatie" component={Notifications}/>
+                            <Route exact path="/home" component={Home}/>
+                            <Route exact path="/oefening" component={Exercise}/>
+
 
                             <Route path="/register">
                                 {localStorage.getItem('auth_token') ? <Redirect to='/' /> : <Register />}
