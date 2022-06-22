@@ -28,6 +28,7 @@ class App extends React.Component {
                     {/* <Aanmeld onSubmit={this.ffChecken} /> */}
                     <Router>
                         <Switch>
+                            <Route exact path="/home" component={Home}/>
                             <Route exact path="/profiel" component={Profile}/>
                             <Route exact path="/scoreboard" component={Scoreboard}/>
                             <Route exact path="/oefening" component={Exercise}/>
