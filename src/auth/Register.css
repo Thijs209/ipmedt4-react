@@ -1,0 +1,79 @@
+.register__form{
+    width: 80vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    border: #6e44ff dashed 0.5rem;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: -1rem 1rem 1rem 0 rgba(0,0,0,0.75);
+}
+
+.register__form > h1{
+
+}
+
+.register__form > p{
+
+}
+
+.register__titel{
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.register__naam{
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.register__email{
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.register__leeftijd{
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.register__wachtwoord{
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+.register__confirm{
+    grid-area: 3 / 2 / 4 / 3;
+}
+
+.register__button{
+    grid-area: 4 / 2 / 5 / 3;
+    display: block;
+    margin: auto;
+    text-align: center;
+    height: 4rem;
+    width: 75%;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #6e44ff;
+    box-shadow: -0.5rem 0.5rem 0 #fbd83a;
+}
+
+
+.register__section{
+    margin: 1rem;
+}
+
+.register__section > input{
+    display: block;
+    margin: auto;
+    margin-top: 1rem;
+    padding: 1rem 0;
+    width: 80%;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #6e44ff;
+    box-shadow: -0.5rem 0.5rem 0 #fbd83a;
+}
+
+.register__section > label{
+    font-size:160%;
+}
