@@ -9,6 +9,7 @@ class Profile extends React.Component{
         authAge: '',
         authScore: '',
     };
+    
 
     profileSubmit = () => {
 
