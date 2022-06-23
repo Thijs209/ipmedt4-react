@@ -11,7 +11,7 @@ class Profile extends React.Component{
         authScore: '',
         splitTimes: '',
         notificationInfo: {},
-        dagen: '',
+        dagen: [],
     };
     
 
@@ -57,7 +57,32 @@ class Profile extends React.Component{
                 }
                 this.setState({dagen: "Elke dag om: " + this.state.dagen});
         } else {
-            
+            if (this.state.notificationInfo.monday === 1) {
+                this.setState({dagen: [...this.state.dagen, "Maandag"]});
+            }
+            if (this.state.notificationInfo.tuesday === 1) {
+                this.setState({dagen: [...this.state.dagen, "Dinsdag"]});
+            }
+            if (this.state.notificationInfo.wednesday === 1) {
+                this.setState({dagen: [...this.state.dagen, "Woensdag"]});
+            }
+            if (this.state.notificationInfo.thursday === 1) {
+                this.setState({dagen: [...this.state.dagen, "Donderdag"]});
+            }
+            if (this.state.notificationInfo.friday === 1) {
+                this.setState({dagen: [...this.state.dagen, "Vrijdag"]});
+            }
+            if (this.state.notificationInfo.saturday === 1) {
+                this.setState({dagen: [...this.state.dagen, "Zaterdag"]});
+            }
+            if (this.state.notificationInfo.sunday === 1) {
+                this.setState({dagen: [...this.state.dagen, "Zondag"]});
+            }
+            this.setState({dagen: this.state.dagen + "om "});
+            for (var i = 0; i < timeArray.length; i++) {
+                this.setState({dagen: this.state.dagen + " " + timeArray[i]});
+            }
+            console.log(this.state.dagen);
         }
     }
 
