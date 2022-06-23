@@ -34,6 +34,7 @@
     padding: 1rem 2rem;
     box-shadow: -0.5rem 0.5rem 0 var(--yellow);
     transition: 0.2s ease-out;
+    cursor:pointer;
 }
 .profileButtonSection__btn:hover{
     transform: translate(-0.3rem, 0.3rem);
