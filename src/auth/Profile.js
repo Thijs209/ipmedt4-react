@@ -12,12 +12,12 @@ class Profile extends React.Component{
         splitTimes: '',
         notificationInfo: {},
         dagen: [],
+        loading: true,
         tijden: '',
         checkDays: '',
         checkTimes: '',
     };
     
-
     profileSubmit = () => {
 
         const authData = {
@@ -27,10 +27,8 @@ class Profile extends React.Component{
         axios.get('sanctum/csrf-cookie').then(response => {
             axios.post(`api/profiel`, authData).then(res => {
                 if (res.data.status === 200) {
-                    this.setState({authName: res.data.name});
-                    this.setState({authAge: res.data.age});
-                    this.setState({authScore: res.data.score});
-                    this.setState({notificationInfo: res.data.notifications});
+                    this.setState({authName: res.data.name, authAge: res.data.age, authScore: res.data.score, notificationInfo: res.data.notifications, loading:false});
+                    
                     console.log(this.state.notificationInfo);
                     this.checkTimes();
                 } else {
@@ -56,10 +54,10 @@ class Profile extends React.Component{
                 this.state.notificationInfo.saturday === 1 &&
                 this.state.notificationInfo.sunday === 1
                 ) {
+                    this.setState({dagen: [...this.state.dagen, "Elke dag"]});
                     for (var i = 0; i < timeArray.length; i++) {
-                        this.setState({dagen: this.state.dagen + " " + timeArray[i]});
+                        this.setState({tijden: this.state.tijden + " " + timeArray[i]});
                     }
-                    this.setState({dagen: "Elke dag om: " + this.state.dagen});
             } else {
                 if (this.state.notificationInfo.monday === 1) {
                     this.setState({dagen: [...this.state.dagen, "Maandag"]});
@@ -89,42 +87,51 @@ class Profile extends React.Component{
             this.setState({checkDays: "Je ingestelde dagen"});
             this.setState({checkTimes: "Je ingestelde tijden"});
         } else {
-            this.setState({checkDays: "Je hebt nog niks ingesteld"});
+            this.setState({checkDays: "Je hebt nog geen notificaties ingesteld"});
         }
     }
 
     render () {
         if (this.state.onLoad === true) {
             this.profileSubmit();
+            this.setState({onLoad:false})
         }
-        this.state.onLoad = false;
-        return (
-            <article>
-                <section className="articleSection">
-                <h2 className="articleSection__h2">{this.state.authName}</h2>
-                <p>{this.state.authName} zijn score: {this.state.authScore}</p>
-                <p>{this.state.authName} zijn leeftijd: {this.state.authAge}</p>
-                </section>
 
-                <section className="articleSection">
-                    <h2 className="articleSection__h2">{this.state.checkDays}</h2>
-                    <p>{this.state.dagen[0]}</p>
-                    <p>{this.state.dagen[1]}</p>
-                    <p>{this.state.dagen[2]}</p>
-                    <p>{this.state.dagen[3]}</p>
-                    <p>{this.state.dagen[4]}</p>
-                    <p>{this.state.dagen[5]}</p>
-                    <p>{this.state.dagen[6]}</p>
+        if (this.state.loading) {
+            return(
+                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            )            
+        } else {
+            return (
+                <article className="profile__article">
 
-                    <h2 className="articleSection__h2 articleSection-padding">{this.state.checkTimes}</h2>
-                    <p>{this.state.tijden}</p>
-                </section>
+                    <section className="articleSection">
+                        <h2 className="articleSection__h2">{this.state.authName}</h2>
+                        <p>{this.state.authName} zijn score: {this.state.authScore}</p>
+                        <p>{this.state.authName} zijn leeftijd: {this.state.authAge}</p>
+                    </section>
 
-                <section className="profileButtonSection">
-                    <button className="profileButtonSection__btn" onClick={this.redirectNotifications}>Stel je notificaties in</button>
-                </section>
-            </article>
-        )
+                    <section className="articleSection">
+                        <h2 className="articleSection__h2">{this.state.checkDays}</h2>
+                        <p>{this.state.dagen[0]}</p>
+                        <p>{this.state.dagen[1]}</p>
+                        <p>{this.state.dagen[2]}</p>
+                        <p>{this.state.dagen[3]}</p>
+                        <p>{this.state.dagen[4]}</p>
+                        <p>{this.state.dagen[5]}</p>
+                        <p>{this.state.dagen[6]}</p>
+
+                        <h2 className="articleSection__h2 articleSection-padding">{this.state.checkTimes}</h2>
+                        <p>{this.state.tijden}</p>
+                    </section>
+
+                    <section className="profileButtonSection">
+                        <button className="profileButtonSection__btn" onClick={this.redirectNotifications}>Stel je notificaties in</button>
+                    </section>
+
+                </article>
+            )
+        }
     }
 }
 

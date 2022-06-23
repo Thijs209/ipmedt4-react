@@ -6,7 +6,11 @@ import kantoor from './assets/kantoormensen.jpg';
 class Home extends React.Component{
     
     buttonPress = () =>{
-        window.location.replace("/oefening")
+        if((!localStorage.getItem('auth_token'))){
+            window.location.replace('/register')
+        } else {
+            window.location.replace("/oefening")
+        }
     }
 
     render(){
@@ -34,9 +38,11 @@ class Home extends React.Component{
                         <img className="section__info__img" src={kantoor} alt="Plaatje" />
                     </figure>
                 </section>
-                <section className="section__aanmeld">
-                    <a className="aanmeld__a" href="/register"><p className="aanmeld__a__p">Meld je meteen aan!</p></a>
-                </section>
+                {!localStorage.getItem('auth_token') ?
+                    <section className="section__aanmeld">
+                        <a className="aanmeld__a" href="/register"><p className="aanmeld__a__p">Meld je meteen aan!</p></a>
+                    </section>:<section></section>
+                }
             </main>
         )
         

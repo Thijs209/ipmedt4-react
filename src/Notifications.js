@@ -4,7 +4,7 @@ import ChooseDays from "./ChooseDays";
 import axios from "axios"
 
 class Notifications extends React.Component{
-    state = {exercises: 1, everyDay: true, intensity:1, time:"", days:{'monday': true, 'tuesday':true, 'wednesday':true, 'thursday':true, 'friday':true, 'saturday':true, 'sunday':true}}
+    state = {loading:false, exercises: 1, everyDay: true, intensity:1, time:"", days:{'monday': true, 'tuesday':true, 'wednesday':true, 'thursday':true, 'friday':true, 'saturday':true, 'sunday':true}}
 
     chooseIntensity = (event) =>{
         this.setState({intensity: event.target.value})
@@ -63,6 +63,7 @@ class Notifications extends React.Component{
             this.setState({time: string})
             console.log(this.state.time)
         }
+        this.setState({loading: true})
         this.makeApiCall();
     }
 
@@ -109,47 +110,53 @@ class Notifications extends React.Component{
     }
 
     render(){
-        return(
-            
-            <form className="notificationsForm" onSubmit={this.submit}>
-            <h1 className="notificationsForm__h1">Stel je tijden in</h1>
-                <section className="notificationsForm__section">
-                    <label className="notificationsForm__label">Wil je elke dag meldingen ontvangen of Alleen sommige dagen?</label><br/>
-                    <section className="notificationsForm__buttonSection">
-                        <input className="notificationsForm__button" id="yes" value="Elke dag" type="button" onClick={this.chooseEveryday}/>
-                        <input className="notificationsForm__button" id="no" value="Niet elke dag" type="button" onClick={this.chooseEveryday}/>
+        if (this.state.loading) {
+            return(
+                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            )  
+        } else {
+            return(
+                
+                <form className="notificationsForm" onSubmit={this.submit}>
+                <h1 className="notificationsForm__h1">Stel je tijden in</h1>
+                    <section className="notificationsForm__section">
+                        <label className="notificationsForm__label">Wil je elke dag meldingen ontvangen of Alleen sommige dagen?</label><br/>
+                        <section className="notificationsForm__buttonSection">
+                            <input className="notificationsForm__button" id="yes" value="Elke dag" type="button" onClick={this.chooseEveryday}/>
+                            <input className="notificationsForm__button" id="no" value="Niet elke dag" type="button" onClick={this.chooseEveryday}/>
+                        </section>
                     </section>
-                </section>
-                <ChooseDays chooseDay={this.chooseDay} everyDay={this.state.everyDay}/>
-                <section className="notificationsForm__section">
-                    <label className="notificationsForm__label">Hoeveel oefeningen per dag Wil je doen?</label><br/>
-                    <select onChange={this.chooseExercise} className="notificationsForm__selectInput">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                </section>
-                <section className="notificationsForm__section">
-                    <label className="notificationsForm__label">Op welke tijden wil je deze oefeningen doen?</label>
-                    <section className="notificationsForm__timeInputSection" id="timeInputSection">
-                        <input required id="1" type="time" className="notificationsForm__timeInput"/>
-                    </section>  
-                </section>
-                <section className="notificationsForm__section">
-                    <label className="notificationsForm__label">Welke intensiteit moeten de oefeningen zijn?</label>
-                    <select onChange={this.chooseIntensity} className="notificationsForm__selectInput">
-                        <option value='1'>Laag</option>
-                        <option value='2'>Medium</option>
-                        <option value='3'>Hoog</option>
-                    </select>
-                </section>
-                <section className="notificationsForm__section">
-                    <input className="notificationsForm__button notificationsForm__submitButton" type="submit"></input>
-                </section>
-            </form>
-        );
+                    <ChooseDays chooseDay={this.chooseDay} everyDay={this.state.everyDay}/>
+                    <section className="notificationsForm__section">
+                        <label className="notificationsForm__label">Hoeveel oefeningen per dag Wil je doen?</label><br/>
+                        <select onChange={this.chooseExercise} className="notificationsForm__selectInput">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </section>
+                    <section className="notificationsForm__section">
+                        <label className="notificationsForm__label">Op welke tijden wil je deze oefeningen doen?</label>
+                        <section className="notificationsForm__timeInputSection" id="timeInputSection">
+                            <input required id="1" type="time" className="notificationsForm__timeInput"/>
+                        </section>  
+                    </section>
+                    <section className="notificationsForm__section">
+                        <label className="notificationsForm__label">Welke intensiteit moeten de oefeningen zijn?</label>
+                        <select onChange={this.chooseIntensity} className="notificationsForm__selectInput">
+                            <option value='1'>Laag</option>
+                            <option value='2'>Medium</option>
+                            <option value='3'>Hoog</option>
+                        </select>
+                    </section>
+                    <section className="notificationsForm__section">
+                        <input className="notificationsForm__button notificationsForm__submitButton" type="submit"></input>
+                    </section>
+                </form>
+            );
+        }
     }
 }
 

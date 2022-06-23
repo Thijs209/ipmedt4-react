@@ -8,6 +8,7 @@ class Exercise extends React.Component{
         onLoad: true,
         userInfo: {},
         exerciseData: {},
+        loading:true,
     };
 
     getExercise = () => {
@@ -19,7 +20,7 @@ class Exercise extends React.Component{
             axios.post(`api/oefening`, authData).then(res => {
                 if (res.data.status === 200) {
                     this.setState({userInfo: res.data.userInfo});
-                    this.setState({exerciseData: res.data.exercises});
+                    this.setState({exerciseData: res.data.exercises, loading:false});
                 } else {
 
                 }
@@ -46,26 +47,32 @@ class Exercise extends React.Component{
 
     render () {
         if (this.state.onLoad === true) {
+            this.setState({onLoad: false})
             this.getExercise();
         }
-        this.state.onLoad = false;
-        
-        return(
-            <article className="article">
-                <section>
-                    <h1>Er staat een oefening voor je klaar!</h1>
-                    <h2>{this.state.exerciseData.name}</h2>
-                    <p>
-                        {this.state.exerciseData.description}
-                    </p>
-                </section>
 
-                <figure>
-                    <img className="article__figure__img" src="../Assets/exercise_jumpingjack.jpg"></img>
-                </figure>
-                <button onClick={this.buttonSubmit}>Oefening Gedaan!</button>
-            </article> 
-        )
+        if (this.state.loading) {
+            return(
+                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            )
+        } else {
+            return(
+                <article className="article">
+                    <section>
+                        <h1>Er staat een oefening voor je klaar!</h1>
+                        <h2>{this.state.exerciseData.name}</h2>
+                        <p>
+                            {this.state.exerciseData.description}
+                        </p>
+                    </section>
+
+                    <figure>
+                        <img className="article__figure__img" src="../Assets/exercise_jumpingjack.jpg"></img>
+                    </figure>
+                    <button onClick={this.buttonSubmit}>Oefening Gedaan!</button>
+                </article> 
+            )
+        }
     }
 }
 export default Exercise;
