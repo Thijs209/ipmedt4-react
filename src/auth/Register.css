@@ -35,6 +35,7 @@
 
 .register__form > section > p{
     font-size:1.8rem;
+    width:90%;
 }
 
 .register__titel{
@@ -50,11 +51,11 @@
 }
 
 .register__leeftijd{
-    grid-area: 2 / 2 / 3 / 3;
+    grid-area: 3 / 1 / 4 / 2;
 }
 
 .register__wachtwoord{
-    grid-area: 3 / 1 / 4 / 2;
+    grid-area: 2 / 2 / 3 / 3;
 }
 
 .register__confirm{
@@ -67,7 +68,7 @@
     margin: 2rem 1rem 1rem 1rem;
     text-align: center;
     height: 4rem;
-    width: 75%;
+    width: 80%;
     font-size: 1.5rem;
     color: black;
     font-weight:bold;
@@ -75,6 +76,7 @@
     box-shadow: -0.5rem 0.5rem 0 #6e44ff;
     cursor:pointer;
     transition: 0.2s ease-out;
+    border:none;
 }
 
 .register__button:hover{
@@ -88,18 +90,20 @@
 }
 
 .register__button__login{
-    grid-area: 4 / 2 / 5 / 3;
     display: block;
     margin: 2rem 1rem 1rem 1rem;
     text-align: center;
     height: 4rem;
     width: 90%;
+    padding:1rem;
     font-size: 1.5rem;
     color: black;
+    font-weight:bold;
     background-color: #fbd83a;
     box-shadow: -0.5rem 0.5rem 0 #6e44ff;
     cursor:pointer;
     transition: 0.2s ease-out;
+    border:none;
 }
 
 .register__button__login:hover{
@@ -115,10 +119,12 @@
 
 .register__section{
     margin: 1rem;
+    width:100%;
 }
 
 .register__section__login{
     margin: 1rem;
+    width:100%;
 }
 
 .register__section > input{
@@ -135,7 +141,7 @@
 .register__section__login > input{
     display: block;
     margin:0.5rem 1rem 1rem 0rem;
-    padding: 1rem 0;
+    padding: 1rem;
     width: 90%;
     font-size: 1.5rem;
     color: white;
@@ -177,6 +183,13 @@
         width:30rem;
     }
 }
+
+/* @media only screen and (max-width: 600px) {
+
+.register__button__login{
+        width:90%;
+    }
+} */
 
 @media only screen and (max-width: 450px) {
     .register__section > input{

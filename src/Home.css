@@ -56,12 +56,20 @@ body{
     margin-bottom:50px;
 }
 
+.section__p{
+    border-radius:1rem;
+    padding:1.2rem;
+    margin:1rem;
+    background-color:rgb(197, 105, 209);
+    box-shadow: -0.6rem 0.6rem 0 #fbd83a;
+}
+
 .section__info__h1{
     font-family: 'MontserratBold', Fallback, sans-serif;
     font-weight: 800;
     font-size: 280%;
-    color: #5ef38c;
-    -webkit-text-stroke: 1px #3c9c5a75;
+    color: #53e481;
+    -webkit-text-stroke: 3px #01361375;
     display: flex;
     justify-content: center;
     transition: 0.3s ease-out;
