@@ -71,7 +71,7 @@ class Notifications extends React.Component{
         let notificationsData = {}
 
         axios.get('/sanctum/csrf-cookie').then(response => {
-            axios.post(`api/profiel`, username).then(res => {
+            axios.post(`api/getId`, username).then(res => {
                 if (res.data.status === 200) {
                     notificationsData = {
                         'userId': res.data.id,
