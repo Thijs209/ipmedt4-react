@@ -29,6 +29,7 @@ class Exercise extends React.Component{
     }
     
     buttonSubmit = () => {
+        this.setState({loading: true})
         const authData = {
             name: localStorage.getItem('auth_name'),
             exerciseCalories: this.state.exerciseData.calories,
