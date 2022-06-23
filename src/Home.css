@@ -17,12 +17,12 @@ html{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 50rem;
+    max-height: 50rem;
 }
 
 .section__button{
-    height: 30rem;
-    width: 30rem;
+    max-width:30rem;
+    max-height:30rem;
     margin: 1rem;
     border-radius: 50%;
     border: none;
@@ -47,7 +47,8 @@ html{
 }
 
 .section__info{
-    height: 80vh;
+    height: auto;
+    margin-bottom:50px;
 }
 
 .section__info__h1{
@@ -100,14 +101,13 @@ html{
 /* ---------- Aanmeldknop -------- */
 .section__aanmeld{
     box-sizing: border-box;
-    height: 50%;
-    width: 100%;
-    margin: auto;
-    margin-top: 5rem;
-    padding: 3rem;
+    height: auto;
+    margin: 5rem auto 15rem auto;
+
 }
 
 .aanmeld__a{
+    padding:5rem;
     color: #fff;
     text-align: center;
     margin: 1rem auto;
@@ -115,17 +115,17 @@ html{
     text-decoration: none;
     cursor: pointer;
     font-size: 1rem;
-    width: 80%;
+
 }
 
 .aanmeld__a__p{
-    font-size: 150%;
+    padding:3rem;
+    font-size: 3.5rem;
     border-radius: 100px;
-    padding: 0.5rem 1rem;
-    width: 100%;
     background-color: #6e44ff;
     transition: 0.2s ease-out;
     box-shadow: -0.5rem 0.5rem 0 #fbd83a;
+    font-weight: bold;
 }
 
 .aanmeld__a__p:hover{
@@ -229,10 +229,15 @@ html{
 
 /* --------- Media queries --------- */
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 400px) {
     .section__button {
-      height: 40rem;
-      width: 40rem;
+      height: 20rem;
+      width: 20rem;
+      min-width:20rem;
+      min-height:20rem;
+    }
+    .aanmeld__a__p{
+        font-size:2.5rem;
     }
 
     .section__info__h1{
@@ -249,6 +254,8 @@ html{
     .section__info__h1{
         font-size: 375%;
     }
+
+
 }
 
 @media screen and (min-width: 750px) {
