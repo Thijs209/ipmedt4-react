@@ -6,7 +6,11 @@ import kantoor from './assets/kantoormensen.jpg';
 class Home extends React.Component{
     
     buttonPress = () =>{
-        window.location.replace("/oefening")
+        if((!localStorage.getItem('auth_token'))){
+            window.location.replace('/register')
+        } else {
+            window.location.replace("/oefening")
+        }
     }
 
     render(){
