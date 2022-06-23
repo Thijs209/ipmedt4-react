@@ -34,8 +34,9 @@ function Register () {
                     window.location.replace("/");
                 } else if (res.data.status === 401) {
                     setLoginInvalid(res.data.message);
+                    setLogin({loading:false})
                 } else {
-                    setLogin({...loginInput, error_list: res.data.validation_errors});
+                    setLogin({...loginInput, error_list: res.data.validation_errors, loading:false});
                 }
             });
         });
@@ -53,13 +54,13 @@ function Register () {
                 <section className="register__section__login">
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" onChange={handleInput} />
-                    <span>{loginInput.error_list.email}</span>
+                    <span>{loginInput.error_list}</span>
                 </section>
 
                 <section className="register__section__login">
                     <label for="password">Wachtwoord</label>
                     <input type="password" name="password" id="password" onChange={handleInput} />
-                    <span>{loginInput.error_list.password}</span>
+                    <span>{loginInput.error_list}</span>
                 </section>
 
                 <span>{loginInvalid}</span>
