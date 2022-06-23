@@ -14,6 +14,7 @@ html{
     background-color: rgb(197, 105, 209);
     border:solid 3px #6e44ff;
     box-shadow: -0.6rem 0.6rem 0 #fbd83a;
+    position: relative;
 }
 .notificationsForm__h1{
     text-align: center;

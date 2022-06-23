@@ -40,7 +40,7 @@ function Register () {
                     localStorage.setItem('auth_name', res.data.username);
                     window.location.replace("/notificatie");
                 } else {
-                    setRegister({...registerInput, error_list: res.data.validation_errors});
+                    setRegister({...registerInput, error_list: res.data.validation_errors, loading:false});
                 }
             });
         });

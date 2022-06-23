@@ -118,11 +118,12 @@ class Notifications extends React.Component{
             return(
                 
                 <form className="notificationsForm" onSubmit={this.submit}>
+                <button className="notificationsForm__closeButton"><section className="cross"></section></button>
                 <h1 className="notificationsForm__h1">Stel je tijden in</h1>
                     <section className="notificationsForm__section">
                         <label className="notificationsForm__label">Wil je elke dag meldingen ontvangen of Alleen sommige dagen?</label><br/>
                         <section className="notificationsForm__buttonSection">
-                            <input className="notificationsForm__button" id="yes" value="Elke dag" type="button" onClick={this.chooseEveryday}/>
+                            <input className="notificationsForm__button fillEveryDay__selectedButton" id="yes" value="Elke dag" type="button" onClick={this.chooseEveryday}/>
                             <input className="notificationsForm__button" id="no" value="Niet elke dag" type="button" onClick={this.chooseEveryday}/>
                         </section>
                     </section>
