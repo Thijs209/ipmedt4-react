@@ -35,6 +35,7 @@
     padding: 1rem 2rem;
     box-shadow: -0.5rem 0.5rem 0 var(--yellow);
     transition: 0.2s ease-out;
+    cursor:pointer;
 }
 
 @media only screen and (max-width: 600px) {
