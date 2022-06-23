@@ -32,8 +32,9 @@ html{
 }
 
 .section__button:hover{
-    transform: translate(-0.3rem, 0.3rem);
-    box-shadow: #5ef38c -0.7rem 0.7rem 0;;
+    transform: translate(-0.5rem, 0.5rem);
+    box-shadow: #5ef38c -0.5rem 0.5rem 0;;
+    cursor: pointer;
 }
 
 .section__button__a{
