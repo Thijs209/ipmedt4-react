@@ -34,9 +34,11 @@ class Home extends React.Component{
                         <img className="section__info__img" src={kantoor} alt="Plaatje" />
                     </figure>
                 </section>
-                <section className="section__aanmeld">
-                    <a className="aanmeld__a" href="/register"><p className="aanmeld__a__p">Meld je meteen aan!</p></a>
-                </section>
+                {!localStorage.getItem('auth_token') ?
+                    <section className="section__aanmeld">
+                        <a className="aanmeld__a" href="/register"><p className="aanmeld__a__p">Meld je meteen aan!</p></a>
+                    </section>:<section></section>
+                }
             </main>
         )
         
