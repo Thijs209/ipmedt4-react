@@ -5,7 +5,6 @@
     border:solid 3px #6e44ff;
     padding:2rem;
     box-shadow: -0.6rem 0.6rem 0 #fbd83a;
-
 }
 
 .articleSection__h2{
@@ -35,6 +34,11 @@
     padding: 1rem 2rem;
     box-shadow: -0.5rem 0.5rem 0 var(--yellow);
     transition: 0.2s ease-out;
+}
+.profileButtonSection__btn:hover{
+    transform: translate(-0.3rem, 0.3rem);
+    box-shadow: -0.2rem 0.2rem 0 #fbd83a;
+    cursor:pointer;
 }
 
 @media only screen and (max-width: 600px) {

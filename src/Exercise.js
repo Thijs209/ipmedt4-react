@@ -4,12 +4,37 @@ import "./Exercise.css";
 
 class Exercise extends React.Component{
 
+    state = {
+        onLoad: true,
+        exerciseData: {},
+    };
+
+    loadExercise = () => {
+        const authData = {
+            name: localStorage.getItem('auth_name')
+        };
+
+        axios.get('sanctum/csrf-cookie').then(response => {
+            axios.post(`api/oefening`, authData).then(res => {
+                if (res.data.status === 200) {
+                    console.log(res.data.userInfo);
+                    console.log(res.data.exercises);
+                } else {
+
+                }
+            });
+        });
+    }
+    
     buttonLink = () => {
         window.location.replace("/");
     }
 
     render () {
-
+        if (this.state.onLoad === true) {
+            this.loadExercise();
+        }
+        this.state.onLoad = false;
         
         return(
             <article className="article">

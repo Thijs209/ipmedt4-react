@@ -10,6 +10,15 @@ html{
 .notificationsForm{
     width: 75vw;
     margin: 4rem auto;
+    background-color: rgb(197, 105, 209);
+    border:solid 3px #6e44ff;
+    box-shadow: -0.6rem 0.6rem 0 #fbd83a;
+}
+.notificationsForm__h1{
+    text-align: center;
+    font-size:300%;
+    padding-top:2rem;
+    padding-bottom:2rem;
 }
 
 .notificationsForm__section{

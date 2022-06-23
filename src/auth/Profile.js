@@ -101,7 +101,7 @@ class Profile extends React.Component{
         return (
             <article>
                 <section className="articleSection">
-                <p>Profiel van {this.state.authName}</p>
+                <h2 className="articleSection__h2">{this.state.authName}</h2>
                 <p>{this.state.authName} zijn score: {this.state.authScore}</p>
                 <p>{this.state.authName} zijn leeftijd: {this.state.authAge}</p>
                 </section>
