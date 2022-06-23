@@ -89,7 +89,7 @@ class Profile extends React.Component{
             this.setState({checkDays: "Je ingestelde dagen"});
             this.setState({checkTimes: "Je ingestelde tijden"});
         } else {
-            this.setState({checkDays: "Je hebt nog niks ingesteld"});
+            this.setState({checkDays: "Je hebt nog geen notificaties ingesteld"});
         }
     }
 
