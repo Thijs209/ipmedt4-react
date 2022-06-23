@@ -11,7 +11,9 @@ html{
 body{
     height:100%;
     min-height:100vh;
-    background-image: radial-gradient(circle at top right, rgb(58,165,195) 0%, rgb(58,165,195) 46%,rgb(60,186,207) 46%, rgb(60,186,207) 49%,rgb(72,208,223) 49%, rgb(72,208,223) 52%,rgb(105,228,242) 52%, rgb(105,228,242) 54%,rgb(129,246,254) 54%, rgb(129,246,254) 100%);}
+    background-image: radial-gradient(circle at top right, rgb(58,165,195) 0%, rgb(58,165,195) 46%,rgb(60,186,207) 46%, rgb(60,186,207) 49%,rgb(72,208,223) 49%, rgb(72,208,223) 52%,rgb(105,228,242) 52%, rgb(105,228,242) 54%,rgb(129,246,254) 54%, rgb(129,246,254) 100%);
+    position:relative;
+}
 
 
 

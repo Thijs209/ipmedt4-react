@@ -9,8 +9,12 @@ class Footer extends React.Component{
         console.log("footer ingeladen");
         return (
             <footer className="footer">
-                <img className="img1" src={Hogeschool}></img>
-                <img className="img2" src={NBM}></img>
+                <figure className="footerFigure">
+                    <img className="footerFigure__img" src={Hogeschool}></img>
+                </figure>
+                <figure className="footerFigure">
+                    <img className="footerFigure__img" src={NBM}></img>
+                </figure>
             </footer>
         )
     }

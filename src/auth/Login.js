@@ -66,6 +66,10 @@ function Register () {
                 <span>{loginInvalid}</span>
 
                 <button  className="register__button__login" type="submit">Log in</button>
+
+                <section className="register__section__change">
+                    <a className="register__section__changeText" href="/register">Heb je nog geen account? Meld je hier aan</a>
+                </section>
             </form>
         );
     }

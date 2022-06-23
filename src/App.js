@@ -8,6 +8,7 @@ import Register from "./auth/Register";
 import Profile from "./auth/Profile";
 import Scoreboard from "./Scoreboard";
 import Exercise from "./Exercise";
+import Footer from "./Footer";
 
 // import Aanmeld from "./Aanmeld";
 import Home from "./Home";
@@ -61,6 +62,7 @@ class App extends React.Component{
                             
                         </Switch>
                     </Router>
+                    <Footer/>
                 </main>
             );
     }

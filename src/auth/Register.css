@@ -158,6 +158,19 @@
     font-size:160%;
 }
 
+.register__section__change{
+    padding-top:1rem;
+}
+.register__section__changeText{
+    font-size:140%;
+    font-weight:bold;
+    text-decoration: none;
+    color:black;
+}
+.register__section__changeText:hover{
+    color:rgb(61, 61, 61);
+}
+
 
 
 @media only screen and (max-width: 800px) {

@@ -89,6 +89,10 @@ function Register () {
                 </section>
 
                 <button className="register__button" type="submit">Registreer</button>
+
+                <section className="register__section__change">
+                    <a className="register__section__changeText" href="/login">Heb je al een account? Klik hier om in te loggen</a>
+                </section>
             </form>
         );
     }
