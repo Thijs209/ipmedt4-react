@@ -35,7 +35,7 @@ class Home extends React.Component{
                     </figure>
                 </section>
                 <section class="section__aanmeld">
-                    <a class="aanmeld__a"><p class="aanmeld__a__p">Meld je meteen aan!</p></a>
+                    <a class="aanmeld__a" href="/register"><p class="aanmeld__a__p">Meld je meteen aan!</p></a>
                 </section>
             </main>
         )
