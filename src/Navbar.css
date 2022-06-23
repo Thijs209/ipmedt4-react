@@ -3,7 +3,7 @@ html{
 }
 .nav {
     overflow: hidden;
-    background-color: white;
+    background-color: rgb(197, 105, 209);
     width: 100%;
     z-index:2;
 }
