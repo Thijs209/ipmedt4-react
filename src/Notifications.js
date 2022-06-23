@@ -90,9 +90,10 @@ class Notifications extends React.Component{
                         console.log(notificationsData);
                             axios.post(`api/setnotifications`, notificationsData).then(res => {
                             if (res.data.status === 200) {
-                                window.location.replace("/");
+                                window.location.replace("/profiel");
                             } else {
                                 console.log("oeps");
+                                console.log(res.data);
                             }
                         });
                     })

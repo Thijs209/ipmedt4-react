@@ -3,8 +3,9 @@ html{
 }
 .nav {
     overflow: hidden;
-    background-color: rgba(253, 52, 140, 0.6);
+    background-color: white;
     width: 100%;
+    z-index:2;
 }
   
 .nav__a {

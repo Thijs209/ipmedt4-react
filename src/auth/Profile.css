@@ -7,10 +7,28 @@ article{
     box-shadow: -0.6rem 0.6rem 0 #fbd83a;
 
 }
-article > p{
+.articleSection > p{
     font-size: 1.8em;
-
 }
+
+.profileButtonSection{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.profileButtonSection__btn{
+    background-color: var(--purple);
+    border: none;
+    font-size: 200%;
+    margin: 1rem 0.4rem;
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: -0.5rem 0.5rem 0 var(--yellow);
+    transition: 0.2s ease-out;
+}
+
+
 
 @media only screen and (max-width: 600px) {
     article{

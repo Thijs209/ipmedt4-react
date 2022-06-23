@@ -6,7 +6,12 @@
 
 html{
     font-size: 62.5%;
-    background-color: rgba(183, 253, 254, 1);
+   
+}
+body{
+    height:100%;
+    min-height:100vh;
+    background-image: radial-gradient(circle at top right, rgb(13, 141, 190) 0%, rgb(13, 141, 190) 46%,rgb(22, 153, 204) 46%, rgb(22, 153, 204) 49%,rgb(31, 166, 217) 49%, rgb(31, 166, 217) 52%,rgb(40, 178, 231) 52%, rgb(40, 178, 231) 54%,rgb(49, 190, 244) 54%, rgb(49, 190, 244) 100%);
 }
 
 
