@@ -10,6 +10,16 @@ html{
 .notificationsForm{
     width: 75vw;
     margin: 4rem auto;
+    padding:1rem;
+    background-color: rgb(197, 105, 209);
+    border:solid 3px #6e44ff;
+    box-shadow: -0.6rem 0.6rem 0 #fbd83a;
+}
+.notificationsForm__h1{
+    text-align: center;
+    font-size:300%;
+    padding-top:2rem;
+    padding-bottom:2rem;
 }
 
 .notificationsForm__section{
@@ -19,7 +29,7 @@ html{
 
 .notificationsForm__label{
     display: inline-block;
-    font-size: 170%;
+    font-size: 2rem;
     width: 100%;
     text-align: center;
 }
@@ -68,7 +78,7 @@ html{
     margin: auto;
     margin-top: 1rem;
     padding: 1rem 1rem;
-    width: 30%;
+    width: 40rem;
     min-width: fit-content;
     font-size: 2.5rem;
     color: white;
@@ -84,7 +94,7 @@ html{
     font-size: 250%;
     color: white;
     padding: 1rem 1rem;
-    width: 30%;
+    width: 40rem;
     text-align: center;
     border: none;
     box-shadow: -0.5rem 0.5rem 0 var(--yellow);
@@ -128,4 +138,31 @@ html{
     margin: 5rem auto;
     padding: 1rem 8rem;
     display: block;
+}
+
+@media only screen and (max-width: 750px) {
+    .notificationsForm__selectInput{
+        width:30rem;
+    }
+    .notificationsForm__timeInput{
+        width:30rem;
+    }
+    .notificationsForm__label{
+        font-size:1.6rem;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .notificationsForm{
+        width:90vw;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .notificationsForm{
+        width:100vw;
+        margin-bottom:0px;
+        padding-bottom:2rem;
+    }
 }

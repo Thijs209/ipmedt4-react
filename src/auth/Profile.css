@@ -1,14 +1,22 @@
 .profile__article{
-    margin:125px auto 75px auto;
+    margin:75px auto 75px auto;
     width:60vw;
-    background-color: rgba(253, 52, 140, 0.6);
+    background-color: rgb(197, 105, 209);
     border:solid 3px #6e44ff;
-    padding:15px;
+    padding:2rem;
     box-shadow: -0.6rem 0.6rem 0 #fbd83a;
+}
 
+.articleSection__h2{
+    padding-left:2rem;
+    padding-bottom:1rem;
+}
+.articleSection-padding{
+    padding-top:2rem;
 }
 .articleSection > p{
     font-size: 1.8em;
+    padding-left:2rem;
 }
 
 .profileButtonSection{
@@ -26,9 +34,13 @@
     padding: 1rem 2rem;
     box-shadow: -0.5rem 0.5rem 0 var(--yellow);
     transition: 0.2s ease-out;
+    cursor:pointer;
 }
-
-
+.profileButtonSection__btn:hover{
+    transform: translate(-0.3rem, 0.3rem);
+    box-shadow: -0.2rem 0.2rem 0 #fbd83a;
+    cursor:pointer;
+}
 
 @media only screen and (max-width: 600px) {
     article{

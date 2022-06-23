@@ -110,7 +110,9 @@ class Notifications extends React.Component{
 
     render(){
         return(
+            
             <form className="notificationsForm" onSubmit={this.submit}>
+            <h1 className="notificationsForm__h1">Stel je tijden in</h1>
                 <section className="notificationsForm__section">
                     <label className="notificationsForm__label">Wil je elke dag meldingen ontvangen of Alleen sommige dagen?</label><br/>
                     <section className="notificationsForm__buttonSection">
@@ -130,7 +132,7 @@ class Notifications extends React.Component{
                     </select>
                 </section>
                 <section className="notificationsForm__section">
-                    <label className="notificationsForm__label">Op welke tijden wil je deze oefeningen deon?</label>
+                    <label className="notificationsForm__label">Op welke tijden wil je deze oefeningen doen?</label>
                     <section className="notificationsForm__timeInputSection" id="timeInputSection">
                         <input required id="1" type="time" className="notificationsForm__timeInput"/>
                     </section>  
