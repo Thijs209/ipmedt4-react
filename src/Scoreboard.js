@@ -9,10 +9,7 @@ class Scoreboard extends React.Component{
         scores: [],
     };
 
-    
-
     loadScores = () => {
-
         axios.get('sanctum/csrf-cookie').then(response => {
             axios.post(`api/scoreboard`).then(res => {
                 this.setState({scores:res.data});
@@ -27,16 +24,17 @@ class Scoreboard extends React.Component{
         if (this.state.onLoad === true) {
             this.loadScores();
         }
+        
         this.state.onLoad = false;
         return (
             <main>
                 <header className="scoreboard__header">
                     <h1 className="scoreboard__heading">Scoreboard</h1>
                 </header>
-
+                <article className="scoreboard__article">
                     {this.state.scores.map(user => {
                         return (
-                            <section className="scoreboard__section">
+                            <section className="scoreboard__section" id="1">
                                 <section className="scoreboard__SectionName">
                                     <p className="scoreboard__sectionText">{user.name}</p>
                                 </section>
@@ -47,6 +45,7 @@ class Scoreboard extends React.Component{
                             </section>
                         )
                     })}
+                </article>
        
             </main>
         )

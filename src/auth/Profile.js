@@ -92,7 +92,7 @@ class Profile extends React.Component{
         }
         this.state.onLoad = false;
         return (
-            <article>
+            <article className="profile__article">
                 <section className="articleSection">
                 <p>Profiel van {this.state.authName}</p>
                 <p>{this.state.authName} zijn score: {this.state.authScore}</p>
