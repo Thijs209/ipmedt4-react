@@ -15,7 +15,7 @@ class Home extends React.Component{
             <main className="main">
                 <section className="section">
                     <button onClick={this.buttonPress} className="section__button">
-                        <a className="section__button__a" href="/api/exercise/">Begin<br/>oefening!</a>
+                        <a className="section__button__a">Begin<br/>oefening!</a>
                     </button>
                 </section>
                 <section className="section__info section__grid">
