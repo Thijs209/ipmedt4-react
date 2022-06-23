@@ -26,16 +26,16 @@ class Navbar extends React.Component{
                     <section><a class="nav__a" href="/home"><p class="nav__a__p">Home</p></a></section>
                     <section><a class="nav__a" href="/scoreboard"><p class="nav__a__p">Scoreboard</p></a></section>
                     <section><a class="nav__a" href="/register"><p class="nav__a__p">Aanmelden</p></a></section>
-                    <section> <a class="nav__a" href="/scoreboard"><p class="nav__a__p">Scoreboard</p></a></section>
+                    <section> <a class="nav__a" href="/login"><p class="nav__a__p">Login</p></a></section>
                 </nav>
             )
         } else {
             return (
                 <nav class="nav">
-                    <a class="nav__a" href="/home"><p class="nav__a__p">Home</p></a>
-                    <a class="nav__a" href="/scoreboard"><p class="nav__a__p">Scoreboard</p></a>
-                    <a class="nav__a" href="/profiel"><p class="nav__a__p">Profiel</p></a>
-                    <a class="nav__a" href="/logout" onClick={this.logoutSubmit}><p class="nav__a__p">Logout</p></a>
+                    <section><a class="nav__a" href="/home"><p class="nav__a__p">Home</p></a></section>
+                    <section><a class="nav__a" href="/scoreboard"><p class="nav__a__p">Scoreboard</p></a></section>
+                    <section><a class="nav__a" href="/profiel"><p class="nav__a__p">Profiel</p></a></section>
+                    <section><a class="nav__a" href="/logout" onClick={this.logoutSubmit}><p class="nav__a__p">Logout</p></a></section>
                 </nav>
             )
         }
