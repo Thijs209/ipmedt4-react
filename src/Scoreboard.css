@@ -16,8 +16,7 @@
 .scoreboard__section{
     display:flex;
     width:50vw;
-    margin-left:25%;
-    margin-right:25%;
+    margin:0 auto;
 }
 .scoreboard__SectionName{
     background-color:#6E44FF;
@@ -40,4 +39,16 @@
     color:white;
     font-weight:bold;
     font-size:200%;
+}
+
+@media only screen and (max-width: 800px) {
+    .scoreboard__section{
+        width:65vw;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .scoreboard__section{
+        width:90vw;
+    }
 }

@@ -1,9 +1,7 @@
-.articleSection{
-    min-width:650px;
-    max-width:850px;
+article{
     margin:125px auto 75px auto;
-    width:60%;
-    background-color: #AC6BB5;
+    width:60vw;
+    background-color: rgba(253, 52, 140, 0.6);
     border:solid 3px #6e44ff;
     padding:15px;
     box-shadow: -0.6rem 0.6rem 0 #fbd83a;
@@ -30,8 +28,10 @@
     transition: 0.2s ease-out;
 }
 
-.profileButtonSection__btn:hover{
-    transform: translate(-0.3rem, 0.3rem);
-    box-shadow: -0.2rem 0.2rem 0 var(--yellow);
-    cursor: pointer;
+
+
+@media only screen and (max-width: 600px) {
+    article{
+        width:80vw;
+    }
 }

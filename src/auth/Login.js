@@ -39,16 +39,16 @@ function Register () {
     }
 
     return (
-        <form  class="register__form" onSubmit={loginSubmit}>
+        <form  class="register__form__login" onSubmit={loginSubmit}>
             <h1>Login Page</h1>
 
-            <section class="register__section">
+            <section class="register__section__login">
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" onChange={handleInput} />
                 <span>{loginInput.error_list.email}</span>
             </section>
 
-            <section class="register__section">
+            <section class="register__section__login">
                 <label for="password">Wachtwoord</label>
                 <input type="password" name="password" id="password" onChange={handleInput} />
                 <span>{loginInput.error_list.password}</span>
@@ -56,7 +56,7 @@ function Register () {
 
             <span>{loginInvalid}</span>
 
-            <button  class="register__button" type="submit">Log in</button>
+            <button  class="register__button__login" type="submit">Log in</button>
         </form>
     );
 }

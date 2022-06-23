@@ -1,6 +1,6 @@
 .register__form{
     width: 80vw;
-    margin: 0 auto;
+    margin: 15rem auto 10rem auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -12,12 +12,27 @@
     box-shadow: -1rem 1rem 1rem 0 rgba(0,0,0,0.75);
 }
 
-.register__form > h1{
-
+.register__form__login{
+    width:500px;
+    margin: 15rem auto 10rem auto;
+    display: block;
+    border: #6e44ff dashed 0.5rem;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: -1rem 1rem 1rem 0 rgba(0,0,0,0.75);
 }
 
-.register__form > p{
 
+.register__form > section > h1{
+    font-size:2.5rem;
+}
+
+.register__form__login > section > h1{
+    font-size:2.5rem;
+}
+
+.register__form > section > p{
+    font-size:1.8rem;
 }
 
 .register__titel{
@@ -47,7 +62,7 @@
 .register__button{
     grid-area: 4 / 2 / 5 / 3;
     display: block;
-    margin: auto;
+    margin: 2rem 1rem 1rem 1rem;
     text-align: center;
     height: 4rem;
     width: 75%;
@@ -55,6 +70,43 @@
     color: white;
     background-color: #6e44ff;
     box-shadow: -0.5rem 0.5rem 0 #fbd83a;
+    cursor:pointer;
+    transition: 0.2s ease-out;
+}
+
+.register__button:hover{
+    transform: translate(-0.3rem, 0.3rem);
+    box-shadow: -0.2rem 0.2rem 0 #fbd83a;
+}
+  
+.register__button.active {
+    background-color: #fbd83a;
+    box-shadow: -0.5rem 0.5rem 0 #6e44ff;
+}
+
+.register__button__login{
+    grid-area: 4 / 2 / 5 / 3;
+    display: block;
+    margin: 2rem 1rem 1rem 1rem;
+    text-align: center;
+    height: 4rem;
+    width: 90%;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #6e44ff;
+    box-shadow: -0.5rem 0.5rem 0 #fbd83a;
+    cursor:pointer;
+    transition: 0.2s ease-out;
+}
+
+.register__button__login:hover{
+    transform: translate(-0.3rem, 0.3rem);
+    box-shadow: -0.2rem 0.2rem 0 #fbd83a;
+}
+  
+.register__button__login.active {
+    background-color: #fbd83a;
+    box-shadow: -0.5rem 0.5rem 0 #6e44ff;
 }
 
 
@@ -62,9 +114,12 @@
     margin: 1rem;
 }
 
+.register__section__login{
+    margin: 1rem;
+}
+
 .register__section > input{
     display: block;
-    margin: auto;
     margin-top: 1rem;
     padding: 1rem 0;
     width: 80%;
@@ -74,6 +129,58 @@
     box-shadow: -0.5rem 0.5rem 0 #fbd83a;
 }
 
+.register__section__login > input{
+    display: block;
+    margin:0.5rem 1rem 1rem 0rem;
+    padding: 1rem 0;
+    width: 90%;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #6e44ff;
+    box-shadow: -0.5rem 0.5rem 0 #fbd83a;
+}
+
+
 .register__section > label{
     font-size:160%;
+}
+
+.register__section__login > label{
+    font-size:160%;
+}
+
+
+
+@media only screen and (max-width: 800px) {
+    .register__form__login{
+        width:80vw;
+    }
+
+    .register__section{
+        display:block;
+        float:none;
+    }
+
+    .register__form{
+        display:block;
+    }
+
+    .register__section > input{
+        width:30rem;
+        max-width:30rem;
+    }
+
+    .register__button{
+        width:30rem;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .register__section > input{
+        width:25rem;
+    }
+
+    .register__button{
+        width:25rem;
+    }
 }
