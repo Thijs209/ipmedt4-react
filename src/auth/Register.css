@@ -69,21 +69,22 @@
     height: 4rem;
     width: 75%;
     font-size: 1.5rem;
-    color: white;
-    background-color: #6e44ff;
-    box-shadow: -0.5rem 0.5rem 0 #fbd83a;
+    color: black;
+    font-weight:bold;
+    background-color: #fbd83a;
+    box-shadow: -0.5rem 0.5rem 0 #6e44ff;
     cursor:pointer;
     transition: 0.2s ease-out;
 }
 
 .register__button:hover{
     transform: translate(-0.3rem, 0.3rem);
-    box-shadow: -0.2rem 0.2rem 0 #fbd83a;
+    box-shadow: -0.2rem 0.2rem 0 #6e44ff;
 }
   
 .register__button.active {
-    background-color: #fbd83a;
-    box-shadow: -0.5rem 0.5rem 0 #6e44ff;
+    background-color: #6e44ff;
+    box-shadow: -0.5rem 0.5rem 0 #fbd83a;
 }
 
 .register__button__login{
@@ -94,16 +95,16 @@
     height: 4rem;
     width: 90%;
     font-size: 1.5rem;
-    color: white;
-    background-color: #6e44ff;
-    box-shadow: -0.5rem 0.5rem 0 #fbd83a;
+    color: black;
+    background-color: #fbd83a;
+    box-shadow: -0.5rem 0.5rem 0 #6e44ff;
     cursor:pointer;
     transition: 0.2s ease-out;
 }
 
 .register__button__login:hover{
     transform: translate(-0.3rem, 0.3rem);
-    box-shadow: -0.2rem 0.2rem 0 #fbd83a;
+    box-shadow: -0.2rem 0.2rem 0 #6e44ff;
 }
   
 .register__button__login.active {
