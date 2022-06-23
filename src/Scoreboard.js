@@ -6,13 +6,14 @@ class Scoreboard extends React.Component{
 
     state = {
         onLoad: true,
+        loading: true,
         scores: [],
     };
 
     loadScores = () => {
         axios.get('sanctum/csrf-cookie').then(response => {
             axios.post(`api/scoreboard`).then(res => {
-                this.setState({scores:res.data});
+                this.setState({scores:res.data, loading: false});
                 var sortedScores = {};
                 
                 console.log(this.state.scores);
@@ -23,9 +24,14 @@ class Scoreboard extends React.Component{
     render () {
         if (this.state.onLoad === true) {
             this.loadScores();
+            this.setState({onLoad: false})
         }
-        
-        this.state.onLoad = false;
+
+        if (this.state.loading) {
+            return(
+                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            )            
+        } else {
         return (
             <main>
                 <header className="scoreboard__header">
@@ -48,7 +54,7 @@ class Scoreboard extends React.Component{
                 </article>
        
             </main>
-        )
+        )}
     }
 }
 
