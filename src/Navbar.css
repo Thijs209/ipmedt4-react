@@ -45,6 +45,8 @@ html{
     height: 100vh;
     color: black;
     opacity: 50%;
+    position: fixed;
+    z-index: 5;
 }
 
 @media only screen and (max-width: 600px) {
