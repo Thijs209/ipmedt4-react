@@ -10,6 +10,7 @@
     border-radius: 1rem;
     padding: 2rem;
     box-shadow: -1rem 1rem 1rem 0 rgba(0,0,0,0.75);
+    background-color: rgb(247, 239, 239);
 }
 
 .register__form__login{
@@ -20,6 +21,7 @@
     border-radius: 1rem;
     padding: 2rem;
     box-shadow: -1rem 1rem 1rem 0 rgba(0,0,0,0.75);
+    background-color: white;
 }
 
 
