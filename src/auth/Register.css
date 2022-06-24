@@ -153,7 +153,10 @@
 .register__section > label{
     font-size:160%;
 }
-
+.register__sectionSpan{
+    font-style: italic;
+    font-size:170%;
+}
 .register__section__login > label{
     font-size:160%;
 }
