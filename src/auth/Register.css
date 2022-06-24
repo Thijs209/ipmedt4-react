@@ -1,6 +1,12 @@
+.register__article{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
 .register__form{
     width: 80vw;
-    margin: 15rem auto 10rem auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -11,6 +17,7 @@
     padding: 2rem;
     box-shadow: -1rem 1rem 1rem 0 rgba(0,0,0,0.75);
     background-color: rgb(247, 239, 239);
+    margin-bottom: 5rem;
 }
 
 .register__form__login{
@@ -177,6 +184,11 @@
 
 
 @media only screen and (max-width: 800px) {
+
+    .register__article{
+        height: 100vh;
+    }
+
     .register__naam{
         grid-area: 1 / 2 / 2 / 3;
     }
