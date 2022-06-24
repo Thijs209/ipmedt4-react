@@ -6,10 +6,12 @@ html{
     background-color: rgb(197, 105, 209);
     width: 100%;
     z-index:2;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
 }
 
 .nav__a{
-    float: left;
     color: #fff;
     text-align: center;
     margin: 1.5rem 0rem 2rem 5rem;
@@ -17,7 +19,27 @@ html{
     text-decoration: none;
     cursor: pointer;
     font-size: 1rem;
-    max-width: 20%;
+    max-width: 100%;
+}
+
+/* nav > section{
+    height: fit-content;
+} */
+
+.nav__banner{
+    text-align: center;
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+    max-width: 100px;
+    height:100%;
+}
+
+nav > section > a > figure{
+    max-height:100px;
+}
+nav > section > a > figure > img{
+    height:100px;
 }
 
 .nav__a__p{
@@ -28,6 +50,7 @@ html{
     background-color: #6e44ff;
     transition: 0.2s ease-out;
     box-shadow: -0.5rem 0.5rem 0 #fbd83a;
+    margin:0rem 1rem 2rem 1rem;
 }
   
 .nav__a:hover > p{
@@ -49,10 +72,14 @@ html{
     z-index: 10;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 660px) {
     nav > section{
         width:20rem;
         margin:0 auto;
+    }
+    nav{
+        display: block !important;
+        grid-template-columns: none;
     }
 
     nav > section:first-child{
@@ -63,6 +90,7 @@ html{
     }
     .nav__a{
         float:none;
+        width:20%;
     }
     .nav__a__p{
         padding:1rem;
@@ -72,6 +100,9 @@ html{
         justify-content: center;
         align-self: center;
     }
+    .nav__banner{
+        font-size:1.7rem;
+    }
 }
 
 
@@ -80,6 +111,7 @@ html{
         font-size:1.8rem;
         padding:1rem;
     }
+
 }
 @media only screen and (min-width: 750px) {
 
@@ -87,11 +119,13 @@ html{
         font-size: 2.2rem;
         padding:1.2rem;
     }
+
 }
 
 @media only screen and (min-width: 950px) {
     .nav__a__p{
         font-size: 3rem;
     }
+
 }
 

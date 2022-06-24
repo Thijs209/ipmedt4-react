@@ -2,6 +2,7 @@ import { getActiveElement } from "@testing-library/user-event/dist/utils";
 import axios from "axios";
 import React from "react";
 import "./Navbar.css";
+import logo from './assets/beweegminuut-logo.png';
 
 class Navbar extends React.Component{  
     state = {loading: false}
@@ -25,6 +26,8 @@ class Navbar extends React.Component{
         if (!localStorage.getItem('auth_token')) {
             return (
                 <nav className="nav">
+                    <section><a className="nav__banner" href="/home"><figure><img src={logo} alt="nationale beweegminuut logo"></img></figure></a></section>
+                    <section></section>
                     <section><a className="nav__a" href="/home"><p className="nav__a__p">Home</p></a></section>
                     <section><a className="nav__a" href="/scoreboard"><p className="nav__a__p">Scoreboard</p></a></section>
                     <section><a className="nav__a" href="/register"><p className="nav__a__p">Aanmelden</p></a></section>
