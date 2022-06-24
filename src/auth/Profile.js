@@ -16,6 +16,8 @@ class Profile extends React.Component{
         tijden: '',
         checkDays: '',
         checkTimes: '',
+        deviceKey: '',
+        notificationClass: 'articleSectionNotifications_off',
     };
     
     profileSubmit = () => {
@@ -28,9 +30,9 @@ class Profile extends React.Component{
             axios.post(`api/profiel`, authData).then(res => {
                 if (res.data.status === 200) {
                     this.setState({authName: res.data.name, authAge: res.data.age, authScore: res.data.score, notificationInfo: res.data.notifications, loading:false});
-                    
-                    console.log(this.state.notificationInfo);
+                    this.setState({deviceKey: res.data.deviceKey});
                     this.checkTimes();
+                    this.checkDeviceKey();
                 } else {
 
                 }
@@ -41,6 +43,14 @@ class Profile extends React.Component{
     redirectNotifications = (e) => {
         e.preventDefault();
         window.location.replace("/notificatie");
+    }
+
+    checkDeviceKey = () => {
+        if (this.state.deviceKey === 200) {
+            this.setState({notificationClass: 'articleSectionNotifications_off'});
+        } else {
+            this.setState({notificationClass: 'articleSectionNotifications_on'});
+        }
     }
 
     checkTimes = () => {
@@ -104,6 +114,15 @@ class Profile extends React.Component{
         } else {
             return (
                 <article className="profile__article">
+
+                    <section className={this.state.notificationClass}>
+                        <h2 className="articleSection__h2">Je hebt nog geen notificaties ingesteld</h2>
+                        <p className="profile__articleSection-text">Klik op de onderstaande knop en log in met je gegevens.</p>
+                        <p className="profile__articleSection-text">Klik vervolgens op de "Allow notifications" knop.</p>
+                        <form action="http://127.0.0.1:8000/login" target="_blank" className="profileButtonSection-push">
+                            <button className="profileButtonSection__btn-push" type="submit">Zet push notifications aan</button>
+                        </form>
+                    </section>
 
                     <section className="articleSection">
                         <h2 className="articleSection__h2">{this.state.authName}</h2>
