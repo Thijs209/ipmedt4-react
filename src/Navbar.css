@@ -74,7 +74,7 @@ nav > section > a > figure > img{
 
 @media only screen and (max-width: 660px) {
     nav > section{
-        width:20rem;
+        width:30rem;
         margin:0 auto;
     }
     nav{
@@ -94,14 +94,12 @@ nav > section > a > figure > img{
     }
     .nav__a__p{
         padding:1rem;
-        width:20rem;
+        width:100%;
         height:4rem;
         margin:0.5rem auto;
         justify-content: center;
         align-self: center;
-    }
-    .nav__banner{
-        font-size:1.7rem;
+        font-size:2rem;
     }
 }
 
