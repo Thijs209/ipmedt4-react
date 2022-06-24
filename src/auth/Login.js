@@ -48,29 +48,31 @@ function Register () {
         )  
     } else {
         return (
-            <form  className="register__form__login" onSubmit={loginSubmit}>
-                <h1>Login Page</h1>
+            <article className='register__article'>
+                <form  className="register__form__login" onSubmit={loginSubmit}>
+                    <h1>Login Page</h1>
 
-                <section className="register__section__login">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" onChange={handleInput} />
-                    <span className="register__sectionSpan">{loginInput.error_list}</span>
-                </section>
+                    <section className="register__section__login">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" onChange={handleInput} />
+                        <span className="register__sectionSpan">{loginInput.error_list}</span>
+                    </section>
 
-                <section className="register__section__login">
-                    <label for="password">Wachtwoord</label>
-                    <input type="password" name="password" id="password" onChange={handleInput} />
-                    <span className="register__sectionSpan">{loginInput.error_list}</span>
-                </section>
+                    <section className="register__section__login">
+                        <label for="password">Wachtwoord</label>
+                        <input type="password" name="password" id="password" onChange={handleInput} />
+                        <span className="register__sectionSpan">{loginInput.error_list}</span>
+                    </section>
 
-                <span className="register__sectionSpan">{loginInvalid}</span>
+                    <span className="register__sectionSpan">{loginInvalid}</span>
 
-                <button  className="register__button__login" type="submit">Log in</button>
+                    <button  className="register__button__login" type="submit">Log in</button>
 
-                <section className="register__section__change">
-                    <a className="register__section__changeText" href="/register">Heb je nog geen account? Meld je hier aan</a>
-                </section>
-            </form>
+                    <section className="register__section__change">
+                        <a className="register__section__changeText" href="/register">Heb je nog geen account? Meld je hier aan</a>
+                    </section>
+                </form>
+            </article>
         );
     }
 }
