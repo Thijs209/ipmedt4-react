@@ -1,6 +1,6 @@
 .register__form{
     width: 80vw;
-    margin: 15rem auto 10rem auto;
+    margin: 5rem auto 5rem auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
