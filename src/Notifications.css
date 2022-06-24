@@ -15,6 +15,7 @@ html{
     border:solid 3px #6e44ff;
     box-shadow: -0.6rem 0.6rem 0 #fbd83a;
     position: relative;
+    margin-bottom: 10rem;
 }
 .notificationsForm__h1{
     text-align: center;
@@ -169,21 +170,6 @@ html{
     transform: translate(-0.1rem, 0.1rem);
 
 }
-
-/* .notificationsForm__closeButton:before, .notificationsForm__closeButton:after {
-    position: absolute;
-    left: 15px;
-    content: ' ';
-    height: 33px;
-    width: 2px;
-    background-color: #333;
-  }
-  .notificationsForm__closeButton:before {
-    transform: rotate(45deg);
-  }
-  .notificationsForm__closeButton:after {
-    transform: rotate(-45deg);
-  } */
 
 @media only screen and (max-width: 1000px) {
     .notificationsForm__closeButton{
