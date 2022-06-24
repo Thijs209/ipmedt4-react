@@ -65,6 +65,13 @@ class Exercise extends React.Component{
                         <p className="article__sectionText">
                             {this.state.exerciseData.description}
                         </p>
+                        <p className="article__sectionText">
+                            Doe deze oefening {this.state.exerciseData.quantity}.
+                        </p>
+                        <p className="article__sectionText">
+                            Je verbrand {this.state.exerciseData.calories} calorieën tijdens deze oefening.
+                        </p>
+           
                     </section>
 
                     <figure className="article__figure">
