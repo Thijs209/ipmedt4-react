@@ -6,7 +6,7 @@
 .articleSection{
     margin:75px auto 75px auto;
     width:60vw;
-    background-color: rgb(197, 105, 209);
+    background-color: rgba(253, 52, 140, 0.6);
     border:solid 3px #6e44ff;
     padding:2rem;
     box-shadow: -0.6rem 0.6rem 0 #fbd83a;
@@ -56,7 +56,7 @@
     display:block;
     margin:75px auto 75px auto;
     width:60vw;
-    background-color: rgb(197, 105, 209);
+    background-color: rgba(253, 52, 140, 0.6);
     border:solid 3px #6e44ff;
     padding:2rem;
     box-shadow: -0.6rem 0.6rem 0 #fbd83a;
@@ -65,7 +65,7 @@
     display:none;
     margin:75px auto 75px auto;
     width:60vw;
-    background-color: rgb(197, 105, 209);
+    background-color: rgba(253, 52, 140, 0.6);
     border:solid 3px #6e44ff;
     padding:2rem;
     box-shadow: -0.6rem 0.6rem 0 #fbd83a;
