@@ -54,16 +54,16 @@ function Register () {
                 <section className="register__section__login">
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" onChange={handleInput} />
-                    <span>{loginInput.error_list}</span>
+                    <span className="register__sectionSpan">{loginInput.error_list}</span>
                 </section>
 
                 <section className="register__section__login">
                     <label for="password">Wachtwoord</label>
                     <input type="password" name="password" id="password" onChange={handleInput} />
-                    <span>{loginInput.error_list}</span>
+                    <span className="register__sectionSpan">{loginInput.error_list}</span>
                 </section>
 
-                <span>{loginInvalid}</span>
+                <span className="register__sectionSpan">{loginInvalid}</span>
 
                 <button  className="register__button__login" type="submit">Log in</button>
 

@@ -59,16 +59,16 @@ class Exercise extends React.Component{
         } else {
             return(
                 <article className="article">
-                    <section>
-                        <h1>Er staat een oefening voor je klaar!</h1>
-                        <h2>{this.state.exerciseData.name}</h2>
-                        <p>
+                    <section className="article__section">
+                        <h1 className="article__sectionH1">Er staat een oefening voor je klaar!</h1>
+                        <h2 className="article__sectionH2">{this.state.exerciseData.name}</h2>
+                        <p className="article__sectionText">
                             {this.state.exerciseData.description}
                         </p>
                     </section>
 
-                    <figure>
-                        <img className="article__figure__img" src="../Assets/exercise_jumpingjack.jpg"></img>
+                    <figure className="article__figure">
+                        <img className="article__figure__img" src={this.state.exerciseData.imagePath}></img>
                     </figure>
                     <button onClick={this.buttonSubmit}>Oefening Gedaan!</button>
                 </article> 
