@@ -1,0 +1,324 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;   
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 5rem;
+    background-image: radial-gradient(circle at top right, rgb(58,165,195) 0%, rgb(58,165,195) 46%,rgb(60,186,207) 46%, rgb(60,186,207) 49%,rgb(72,208,223) 49%, rgb(72,208,223) 52%,rgb(105,228,242) 52%, rgb(105,228,242) 54%,rgb(129,246,254) 54%, rgb(129,246,254) 100%);
+}
+
+/* ---- Big button stuff ----- */
+.section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 50rem;
+}
+
+.section__button{
+    max-width:30rem;
+    max-height:30rem;
+    margin: 1rem;
+    border-radius: 50%;
+    border: none;
+    background-color: #fd348c;
+    box-shadow: #5ef38c -1rem 1rem 0;
+    transition: 0.3s ease-out;
+}
+
+.section__button:hover{
+    transform: translate(-0.5rem, 0.5rem);
+    box-shadow: #5ef38c -0.5rem 0.5rem 0;;
+    cursor: pointer;
+}
+
+.section__button__a{
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 250%;
+    width: 100%;
+    height: 100%;
+}
+
+.section__info{
+    height: auto;
+    margin-bottom:50px;
+}
+
+.section__p{
+    border-radius:1rem;
+    padding:1.2rem;
+    margin:1rem;
+    background-color:rgb(197, 105, 209);
+    box-shadow: -0.6rem 0.6rem 0 #fbd83a;
+    height:fit-content;
+}
+
+.section__info__h1{
+    font-family: 'MontserratBold', Fallback, sans-serif;
+    font-weight: 800;
+    font-size: 280%;
+    color: #5ef38c;
+    -webkit-text-stroke: 3px #01361375;
+    display: flex;
+    justify-content: center;
+    transition: 0.3s ease-out;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.section__info__figure{
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.section__info__img{
+    animation-name: swing;
+    animation-iteration-count: infinite;
+    animation-duration: 2.5s;
+    max-width: 80%;
+    width: auto;
+    height: 18rem;
+    transition: transform .2s ease-in-out;
+    border: #6e44ff 0.5rem dashed;
+    border-radius: 5px;
+}
+
+.section__info__text{
+    display: flex;
+    justify-content: center;
+    font-size: 200%;
+    text-align: center;
+}
+
+.section__info__text > p{
+    margin-top: 2rem;
+    width: 80%;
+}
+
+
+/* ---------- Aanmeldknop -------- */
+.section__aanmeld{
+    box-sizing: border-box;
+    height: auto;
+    margin: 5rem auto 10rem auto;
+    grid-area: 7 / 1 / 8 / 2;
+}
+
+.aanmeld__a{
+    padding:5rem;
+    color: #fff;
+    text-align: center;
+    margin: 1rem auto;
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1rem;
+
+}
+
+.aanmeld__a__p{
+    padding:3rem;
+    font-size: 3.5rem;
+    border-radius: 100px;
+    background-color: #6e44ff;
+    transition: 0.2s ease-out;
+    box-shadow: -0.5rem 0.5rem 0 #fbd83a;
+    font-weight: bold;
+}
+
+.aanmeld__a__p:hover{
+    transform: translate(-0.3rem, 0.3rem);
+    box-shadow: -0.2rem 0.2rem 0 #fbd83a;
+}
+  
+.aanmeld__a.active {
+    background-color: #fbd83a;
+    box-shadow: -0.5rem 0.5rem 0 #6e44ff;
+}
+
+.form > input{
+    display: block;
+    margin: auto;
+    margin-top: 1rem;
+    padding: 1rem 0;
+    width: 80%;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #6e44ff;
+    box-shadow: -0.5rem 0.5rem 0 #fbd83a;
+}
+
+.form > input::placeholder {
+    color: white;
+}
+
+.form > select{
+    display: block;
+    margin: auto;
+    margin: 1rem auto;
+    width: 80%;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #6e44ff;
+    box-shadow: -0.5rem 0.5rem 0 #fbd83a;
+}
+/* ------ Grid main ------ */
+.main{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.section{
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.section__info{
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+/* ------ Grid stuff ------- */
+.section__grid{
+    display: grid;
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    align-items: center;
+}
+
+.h1_grid1{
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.h1_grid2{
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.figure1{
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+.text1{
+    grid-area: 4 / 1 / 5 / 2;
+}
+
+.figure2{
+    grid-area: 5 / 1 / 6 / 2;
+}
+
+.text2{
+    grid-area: 6 / 1 / 7 / 2;
+}
+
+/* --------- Media queries --------- */
+
+@media screen and (min-width: 400px) {
+    .section__button {
+      height: 20rem;
+      width: 20rem;
+      min-width:20rem;
+      min-height:20rem;
+    }
+    .aanmeld__a__p{
+        font-size:2.5rem;
+    }
+
+    .section__info__h1{
+        font-size: 300%;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .section__button {
+      height: 45rem;
+      width: 45rem;
+    }
+
+    .section__info__h1{
+        font-size: 375%;
+    }
+
+
+}
+
+@media screen and (min-width: 750px) {
+    .section{
+        height: 65rem;
+    }
+
+    .section__button {
+      height: 55rem;
+      width: 55rem;
+    }
+
+    .section__info__h1{
+        font-size: 500%;
+    }
+
+    .section__info__img{
+        height: 22rem;
+        width: auto;
+    }
+
+    .section__info{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.1fr 0.1fr 0.5fr 0.5fr;
+    }
+
+    .h1_grid1{
+        grid-area: 1 / 1 / 2 / 3;
+    }
+    
+    .h1_grid2{
+        grid-area: 2 / 1 / 3 / 3;
+    }
+    
+    .figure1{
+        grid-area: 3 / 1 / 4 / 2;
+    }
+    
+    .text1{
+        grid-area: 3 / 2 / 4 / 3;
+    }
+
+    .text2{
+        grid-area: 4 / 1 / 5 / 2;
+    }
+    
+    .figure2{
+        grid-area: 4 / 2 / 5 / 3;
+    }
+}
+
+/* ---------- Animations --------- */
+
+@keyframes swing {
+    0%{
+        transform: rotate(8deg)
+    }
+    50%{
+        transform: rotate(-8deg)
+    }
+    100%{
+        transform: rotate(8deg)
+    }
+}
+
